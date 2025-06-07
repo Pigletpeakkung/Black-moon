@@ -1,0 +1,22 @@
+{
+  "name": "cosmic-dual-moon-website",
+  "version": "1.0.0",
+  "description": "🌙 Cosmic dual moon website - Where light meets shadow, East meets West",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "npm run minify",
+    "minify": "html-minifier --input-dir . --output-dir dist --file-ext html --remove-comments --collapse-whitespace",
+    "deploy": "npm run build && netlify deploy --prod --dir=dist",
+    "test": "html-validate index.html"
+  },
+  "keywords": ["cosmic", "dual-moon", "portfolio", "thanatsitt"],
+  "author": "Thanatsitt Santisamranwilai",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "html-minifier": "^4.0.0",
+    "html-validate": "^8.5.0",
+    "netlify-cli": "^16.8.1"
+  }
+}
