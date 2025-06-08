@@ -43,11 +43,6 @@
             
             --border-radius: 12px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Dynamic background variables */
-            --bg-shift-x: 0px;
-            --bg-shift-y: 0px;
-            --time-factor: 0;
         }
 
         /* Reset and Base */
@@ -360,7 +355,7 @@
             z-index: -5;
         }
 
-        /* 🌙 ENHANCED DUAL MOON SYSTEM - NEW ANIMATION */
+        /* 🌙 ENHANCED DUAL MOON SYSTEM - NEW QUANTUM PORTAL ANIMATION */
         .dual-moon-system {
             position: relative;
             width: 320px;
@@ -372,45 +367,67 @@
             perspective: 1000px;
         }
 
-        /* Cosmic Energy Field */
-        .cosmic-energy-field {
+        /* Quantum Portal Energy Field */
+        .quantum-portal {
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 50%;
             background: 
-                radial-gradient(circle at 30% 30%, 
-                    rgba(255, 255, 255, 0.08) 0%,
-                    rgba(192, 192, 192, 0.04) 30%,
-                    transparent 60%),
-                radial-gradient(circle at 70% 70%, 
-                    rgba(26, 26, 26, 0.15) 0%,
-                    rgba(64, 64, 64, 0.08) 30%,
-                    transparent 60%);
-            animation: energyFieldPulse 8s ease-in-out infinite;
+                radial-gradient(circle at 50% 50%, 
+                    transparent 0%,
+                    rgba(192, 192, 192, 0.03) 20%,
+                    rgba(255, 255, 255, 0.05) 40%,
+                    rgba(26, 26, 26, 0.08) 60%,
+                    transparent 80%);
+            animation: quantumPortalPulse 12s ease-in-out infinite;
             z-index: 1;
         }
 
-        @keyframes energyFieldPulse {
+        @keyframes quantumPortalPulse {
             0%, 100% { 
                 transform: scale(1) rotate(0deg);
                 opacity: 0.6;
+                background: radial-gradient(circle at 50% 50%, 
+                    transparent 0%,
+                    rgba(192, 192, 192, 0.03) 20%,
+                    rgba(255, 255, 255, 0.05) 40%,
+                    rgba(26, 26, 26, 0.08) 60%,
+                    transparent 80%);
             }
             25% { 
-                transform: scale(1.05) rotate(90deg);
+                transform: scale(1.08) rotate(90deg);
                 opacity: 0.8;
+                background: radial-gradient(circle at 50% 50%, 
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.05) 20%,
+                    rgba(192, 192, 192, 0.07) 40%,
+                    rgba(64, 224, 208, 0.06) 60%,
+                    transparent 80%);
             }
             50% { 
-                transform: scale(1.1) rotate(180deg);
+                transform: scale(1.15) rotate(180deg);
                 opacity: 1;
+                background: radial-gradient(circle at 50% 50%, 
+                    transparent 0%,
+                    rgba(26, 26, 26, 0.08) 20%,
+                    rgba(255, 255, 255, 0.08) 40%,
+                    rgba(138, 43, 226, 0.06) 60%,
+                    transparent 80%);
             }
             75% { 
-                transform: scale(1.05) rotate(270deg);
-                opacity: 0.8;
+                transform: scale(1.08) rotate(270deg);
+                opacity: 0.9;
+                background: radial-gradient(circle at 50% 50%, 
+                    transparent 0%,
+                    rgba(255, 215, 0, 0.04) 20%,
+                    rgba(26, 26, 26, 0.06) 40%,
+                    rgba(192, 192, 192, 0.08) 60%,
+                    transparent 80%);
             }
         }
 
-        /* Orbital Rings with Breathing Effect */
+        /* Orbital Rings with Gravitational Wave Effect */
         .orbital-ring {
             position: absolute;
             border-radius: 50%;
@@ -424,7 +441,7 @@
         .outer-ring {
             width: 320px;
             height: 320px;
-            animation: ringBreathing 12s ease-in-out infinite;
+            animation: gravitationalWave 16s ease-in-out infinite;
             z-index: 2;
         }
 
@@ -434,7 +451,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: ringBreathing 10s ease-in-out infinite reverse;
+            animation: gravitationalWave 12s ease-in-out infinite reverse;
             z-index: 2;
         }
 
@@ -444,24 +461,34 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: ringBreathing 8s ease-in-out infinite;
+            animation: gravitationalWave 8s ease-in-out infinite;
             z-index: 2;
         }
 
-        @keyframes ringBreathing {
+        @keyframes gravitationalWave {
             0%, 100% { 
-                transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%) scale(1) skewX(0deg);
                 opacity: 0.3;
                 border-color: rgba(192, 192, 192, 0.2);
             }
+            25% {
+                transform: translate(-50%, -50%) scale(1.05) skewX(2deg);
+                opacity: 0.6;
+                border-color: rgba(255, 255, 255, 0.3);
+            }
             50% { 
-                transform: translate(-50%, -50%) scale(1.08);
-                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(1.1) skewX(0deg);
+                opacity: 0.8;
                 border-color: rgba(192, 192, 192, 0.4);
+            }
+            75% {
+                transform: translate(-50%, -50%) scale(1.05) skewX(-2deg);
+                opacity: 0.6;
+                border-color: rgba(255, 255, 255, 0.3);
             }
         }
 
-        /* Enhanced Moon Orbits with Figure-8 Pattern */
+        /* Enhanced Moon Orbits with Infinity Pattern */
         .white-moon {
             position: absolute;
             width: 55px;
@@ -470,7 +497,7 @@
             left: 50%;
             margin-top: -27.5px;
             margin-left: -27.5px;
-            animation: whiteMoonFigure8 20s linear infinite;
+            animation: whiteMoonInfinity 24s linear infinite;
             z-index: 4;
             filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
         }
@@ -483,105 +510,235 @@
             left: 50%;
             margin-top: -25px;
             margin-left: -25px;
-            animation: blackMoonFigure8 16s linear infinite reverse;
+            animation: blackMoonInfinity 20s linear infinite reverse;
             z-index: 3;
             filter: drop-shadow(0 0 20px rgba(192, 192, 192, 0.6));
         }
 
-        /* Figure-8 Orbital Patterns */
-        @keyframes whiteMoonFigure8 {
+        /* Infinity Orbital Patterns (Figure-8 with Twist) */
+        @keyframes whiteMoonInfinity {
             0% { 
-                transform: translateX(120px) translateY(0px) rotate(0deg);
+                transform: translateX(130px) translateY(0px) rotateZ(0deg);
+            }
+            12.5% { 
+                transform: translateX(92px) translateY(-92px) rotateZ(45deg);
             }
             25% { 
-                transform: translateX(0px) translateY(-80px) rotate(90deg);
+                transform: translateX(0px) translateY(-90px) rotateZ(90deg);
+            }
+            37.5% { 
+                transform: translateX(-92px) translateY(-92px) rotateZ(135deg);
             }
             50% { 
-                transform: translateX(-120px) translateY(0px) rotate(180deg);
+                transform: translateX(-130px) translateY(0px) rotateZ(180deg);
+            }
+            62.5% { 
+                transform: translateX(-92px) translateY(92px) rotateZ(225deg);
             }
             75% { 
-                transform: translateX(0px) translateY(80px) rotate(270deg);
+                transform: translateX(0px) translateY(90px) rotateZ(270deg);
+            }
+            87.5% { 
+                transform: translateX(92px) translateY(92px) rotateZ(315deg);
             }
             100% { 
-                transform: translateX(120px) translateY(0px) rotate(360deg);
+                transform: translateX(130px) translateY(0px) rotateZ(360deg);
             }
         }
 
-        @keyframes blackMoonFigure8 {
+        @keyframes blackMoonInfinity {
             0% { 
-                transform: translateX(90px) translateY(0px) rotate(0deg);
+                transform: translateX(100px) translateY(0px) rotateZ(0deg);
+            }
+            12.5% { 
+                transform: translateX(71px) translateY(71px) rotateZ(-45deg);
             }
             25% { 
-                transform: translateX(0px) translateY(60px) rotate(-90deg);
+                transform: translateX(0px) translateY(70px) rotateZ(-90deg);
+            }
+            37.5% { 
+                transform: translateX(-71px) translateY(71px) rotateZ(-135deg);
             }
             50% { 
-                transform: translateX(-90px) translateY(0px) rotate(-180deg);
+                transform: translateX(-100px) translateY(0px) rotateZ(-180deg);
+            }
+            62.5% { 
+                transform: translateX(-71px) translateY(-71px) rotateZ(-225deg);
             }
             75% { 
-                transform: translateX(0px) translateY(-60px) rotate(-270deg);
+                transform: translateX(0px) translateY(-70px) rotateZ(-270deg);
+            }
+            87.5% { 
+                transform: translateX(71px) translateY(-71px) rotateZ(-315deg);
             }
             100% { 
-                transform: translateX(90px) translateY(0px) rotate(-360deg);
+                transform: translateX(100px) translateY(0px) rotateZ(-360deg);
             }
         }
 
-        /* Central Duality Core with Morphing Animation */
-        .duality-core {
+        /* Central Quantum Nexus Core */
+        .quantum-nexus {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: 
-                radial-gradient(circle at 30% 30%, 
-                    rgba(255, 255, 255, 0.15) 0%,
-                    rgba(192, 192, 192, 0.08) 40%,
-                    rgba(26, 26, 26, 0.12) 60%,
-                    transparent 100%);
-            border-radius: 50%;
+            width: 90px;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            animation: dualityCoreTransform 6s ease-in-out infinite;
             z-index: 5;
-            backdrop-filter: blur(8px);
-            border: 2px solid rgba(192, 192, 192, 0.3);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(192, 192, 192, 0.2);
+            border-radius: 50%;
+            overflow: hidden;
         }
 
-        @keyframes dualityCoreTransform {
+        /* Quantum Particle System */
+        .quantum-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: quantumSpin 15s linear infinite;
+        }
+
+        .quantum-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        .particle-1 {
+            top: 20%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, transparent 70%);
+            animation: particle1Orbit 3s ease-in-out infinite;
+        }
+
+        .particle-2 {
+            top: 50%;
+            right: 20%;
+            background: radial-gradient(circle, rgba(192,192,192,1) 0%, transparent 70%);
+            animation: particle2Orbit 4s ease-in-out infinite reverse;
+        }
+
+        .particle-3 {
+            bottom: 20%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(26,26,26,1) 0%, rgba(192,192,192,0.5) 50%, transparent 70%);
+            animation: particle3Orbit 3.5s ease-in-out infinite;
+        }
+
+        .particle-4 {
+            top: 50%;
+            left: 20%;
+            background: radial-gradient(circle, rgba(70,130,180,1) 0%, transparent 70%);
+            animation: particle4Orbit 4.5s ease-in-out infinite reverse;
+        }
+
+        @keyframes quantumSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes particle1Orbit {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.3) rotateY(180deg); opacity: 1; }
+        }
+
+        @keyframes particle2Orbit {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.4) rotateX(180deg); opacity: 1; }
+        }
+
+        @keyframes particle3Orbit {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+            50% { transform: translate(-50%, -50%) scale(1.2) rotateZ(180deg); opacity: 1; }
+        }
+
+        @keyframes particle4Orbit {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.5) rotateY(-180deg); opacity: 1; }
+        }
+
+        /* Central Quantum Symbol */
+        .quantum-symbol {
+            font-size: 2.8rem;
+            background: linear-gradient(45deg, 
+                var(--primary-silver) 0%,
+                #ffffff 25%,
+                var(--accent-blue) 50%,
+                #ffffff 75%,
+                var(--primary-silver) 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: quantumSymbolShift 8s ease-in-out infinite;
+            z-index: 6;
+            position: relative;
+        }
+
+        @keyframes quantumSymbolShift {
             0%, 100% { 
-                transform: translate(-50%, -50%) scale(1) rotate(0deg);
-                background: radial-gradient(circle at 30% 30%, 
-                    rgba(255, 255, 255, 0.15) 0%,
-                    rgba(192, 192, 192, 0.08) 40%,
-                    rgba(26, 26, 26, 0.12) 60%,
-                    transparent 100%);
+                background-position: 0% 50%;
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0 0 15px rgba(192,192,192,0.4));
             }
             25% { 
-                transform: translate(-50%, -50%) scale(1.1) rotate(90deg);
-                background: radial-gradient(circle at 70% 30%, 
-                    rgba(26, 26, 26, 0.2) 0%,
-                    rgba(64, 64, 64, 0.12) 40%,
-                    rgba(255, 255, 255, 0.08) 60%,
-                    transparent 100%);
+                background-position: 100% 0%;
+                transform: scale(1.1) rotate(90deg);
+                filter: drop-shadow(0 0 25px rgba(255,255,255,0.6));
             }
             50% { 
-                transform: translate(-50%, -50%) scale(1.15) rotate(180deg);
-                background: radial-gradient(circle at 70% 70%, 
-                    rgba(255, 255, 255, 0.18) 0%,
-                    rgba(192, 192, 192, 0.1) 40%,
-                    rgba(26, 26, 26, 0.15) 60%,
-                    transparent 100%);
+                background-position: 100% 100%;
+                transform: scale(1.15) rotate(180deg);
+                filter: drop-shadow(0 0 35px rgba(70,130,180,0.5));
             }
             75% { 
-                transform: translate(-50%, -50%) scale(1.1) rotate(270deg);
-                background: radial-gradient(circle at 30% 70%, 
-                    rgba(26, 26, 26, 0.2) 0%,
-                    rgba(64, 64, 64, 0.12) 40%,
-                    rgba(255, 255, 255, 0.08) 60%,
-                    transparent 100%);
+                background-position: 0% 100%;
+                transform: scale(1.1) rotate(270deg);
+                filter: drop-shadow(0 0 25px rgba(255,255,255,0.6));
+            }
+        }
+
+        /* Energy Waves Emanating from Center */
+        .quantum-nexus::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            border: 2px solid rgba(192, 192, 192, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: quantumWaveExpansion 6s ease-out infinite;
+        }
+
+        .quantum-nexus::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: quantumWaveExpansion 8s ease-out infinite 2s;
+        }
+
+        @keyframes quantumWaveExpansion {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
             }
         }
 
@@ -601,7 +758,7 @@
                 rgba(255, 255, 255, 0.4) 50%,
                 transparent 100%);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-            animation: trailFade 2s ease-out forwards;
+            animation: trailFade 2.5s ease-out forwards;
         }
 
         .black-trail {
@@ -610,7 +767,7 @@
                 rgba(128, 128, 128, 0.4) 50%,
                 transparent 100%);
             box-shadow: 0 0 12px rgba(192, 192, 192, 0.5);
-            animation: trailFade 2s ease-out forwards;
+            animation: trailFade 2.5s ease-out forwards;
         }
 
         @keyframes trailFade {
@@ -817,7 +974,7 @@
             animation: galacticShimmer 4s ease-in-out infinite;
         }
 
-        @keyframes galacticShimmer {
+                @keyframes galacticShimmer {
             0%, 100% { background-position: 0% 50%; }
             25% { background-position: 100% 50%; }
             50% { background-position: 100% 100%; }
@@ -1206,26 +1363,37 @@
                 margin-left: -20px;
             }
 
-            @keyframes whiteMoonFigure8 {
-                0% { transform: translateX(90px) translateY(0px) rotate(0deg); }
-                25% { transform: translateX(0px) translateY(-60px) rotate(90deg); }
-                50% { transform: translateX(-90px) translateY(0px) rotate(180deg); }
-                75% { transform: translateX(0px) translateY(60px) rotate(270deg); }
-                100% { transform: translateX(90px) translateY(0px) rotate(360deg); }
+            @keyframes whiteMoonInfinity {
+                0% { transform: translateX(100px) translateY(0px) rotateZ(0deg); }
+                12.5% { transform: translateX(71px) translateY(-71px) rotateZ(45deg); }
+                25% { transform: translateX(0px) translateY(-70px) rotateZ(90deg); }
+                37.5% { transform: translateX(-71px) translateY(-71px) rotateZ(135deg); }
+                50% { transform: translateX(-100px) translateY(0px) rotateZ(180deg); }
+                62.5% { transform: translateX(-71px) translateY(71px) rotateZ(225deg); }
+                75% { transform: translateX(0px) translateY(70px) rotateZ(270deg); }
+                87.5% { transform: translateX(71px) translateY(71px) rotateZ(315deg); }
+                100% { transform: translateX(100px) translateY(0px) rotateZ(360deg); }
             }
 
-            @keyframes blackMoonFigure8 {
-                0% { transform: translateX(70px) translateY(0px) rotate(0deg); }
-                25% { transform: translateX(0px) translateY(45px) rotate(-90deg); }
-                50% { transform: translateX(-70px) translateY(0px) rotate(-180deg); }
-                75% { transform: translateX(0px) translateY(-45px) rotate(-270deg); }
-                100% { transform: translateX(70px) translateY(0px) rotate(-360deg); }
+            @keyframes blackMoonInfinity {
+                0% { transform: translateX(80px) translateY(0px) rotateZ(0deg); }
+                12.5% { transform: translateX(57px) translateY(57px) rotateZ(-45deg); }
+                25% { transform: translateX(0px) translateY(56px) rotateZ(-90deg); }
+                37.5% { transform: translateX(-57px) translateY(57px) rotateZ(-135deg); }
+                50% { transform: translateX(-80px) translateY(0px) rotateZ(-180deg); }
+                62.5% { transform: translateX(-57px) translateY(-57px) rotateZ(-225deg); }
+                75% { transform: translateX(0px) translateY(-56px) rotateZ(-270deg); }
+                87.5% { transform: translateX(57px) translateY(-57px) rotateZ(-315deg); }
+                100% { transform: translateX(80px) translateY(0px) rotateZ(-360deg); }
             }
 
-            .duality-core {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
+            .quantum-nexus {
+                width: 70px;
+                height: 70px;
+            }
+
+            .quantum-symbol {
+                font-size: 2.2rem;
             }
         }
 
@@ -1272,17 +1440,17 @@
         <section class="hero-intro" id="intro">
             <div class="hero-content">
                 
-                <!-- 🌙 ENHANCED DUAL MOON SYSTEM WITH NEW ANIMATION -->
+                <!-- 🌙 ENHANCED DUAL MOON SYSTEM WITH QUANTUM NEXUS -->
                 <div class="dual-moon-system">
-                    <!-- Cosmic Energy Field -->
-                    <div class="cosmic-energy-field"></div>
+                    <!-- Quantum Portal Energy Field -->
+                    <div class="quantum-portal"></div>
                     
-                    <!-- Orbital Rings with Breathing Effect -->
+                    <!-- Orbital Rings with Gravitational Wave Effect -->
                     <div class="orbital-ring outer-ring"></div>
                     <div class="orbital-ring middle-ring"></div>
                     <div class="orbital-ring inner-ring"></div>
                     
-                    <!-- White Moon (Figure-8 Orbit) -->
+                    <!-- White Moon (Infinity Orbit) -->
                     <div class="white-moon">
                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
@@ -1314,7 +1482,7 @@
                         </svg>
                     </div>
                     
-                    <!-- Black Moon (Counter Figure-8 Orbit) -->
+                    <!-- Black Moon (Counter Infinity Orbit) -->
                     <div class="black-moon">
                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
@@ -1346,24 +1514,32 @@
                         </svg>
                     </div>
                     
-                    <!-- Central Duality Core with Morphing Animation -->
-                    <div class="duality-core">☯</div>
+                    <!-- Central Quantum Nexus with Particle System -->
+                    <div class="quantum-nexus">
+                        <div class="quantum-particles">
+                            <div class="quantum-particle particle-1"></div>
+                            <div class="quantum-particle particle-2"></div>
+                            <div class="quantum-particle particle-3"></div>
+                            <div class="quantum-particle particle-4"></div>
+                        </div>
+                        <div class="quantum-symbol">⚛</div>
+                    </div>
                 </div>
 
                 <!-- Enhanced Moon Phase Animation with Flares -->
                 <div class="moon-phase-container">
-                    <!-- Dual Eclipse Phase -->
-                    <div class="moon-phase dual-eclipse active" data-phase="dual">
+                    <!-- Quantum Convergence Phase -->
+                    <div class="moon-phase quantum-convergence active" data-phase="quantum">
                         <div class="moon-flare"></div>
                         <svg viewBox="0 0 100 100" class="moon-svg">
                             <defs>
-                                <radialGradient id="dualEclipseGradient" cx="50%" cy="50%">
+                                <radialGradient id="quantumGradient" cx="50%" cy="50%">
                                     <stop offset="0%" style="stop-color:#ffffff"/>
-                                    <stop offset="40%" style="stop-color:#C0C0C0"/>
-                                    <stop offset="60%" style="stop-color:#2a2a2a"/>
-                                    <stop offset="100%" style="stop-color:#0a0a0a"/>
+                                    <stop offset="30%" style="stop-color:#4682B4"/>
+                                    <stop offset="60%" style="stop-color:#C0C0C0"/>
+                                    <stop offset="100%" style="stop-color:#1a1a1a"/>
                                 </radialGradient>
-                                <filter id="dualGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <filter id="quantumGlow" x="-50%" y="-50%" width="200%" height="200%">
                                     <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
                                     <feMerge> 
                                         <feMergeNode in="coloredBlur"/>
@@ -1371,11 +1547,13 @@
                                     </feMerge>
                                 </filter>
                             </defs>
-                            <!-- Yin-Yang style dual moon -->
-                            <circle cx="50" cy="50" r="40" fill="url(#dualEclipseGradient)" filter="url(#dualGlow)"/>
-                            <path d="M50 10 A20 20 0 0 1 50 50 A20 20 0 0 0 50 90 A40 40 0 0 1 50 10 Z" fill="#ffffff"/>
-                            <circle cx="50" cy="30" r="8" fill="#1a1a1a"/>
-                            <circle cx="50" cy="70" r="8" fill="#ffffff"/>
+                            <!-- Quantum interference pattern -->
+                            <circle cx="50" cy="50" r="40" fill="url(#quantumGradient)" filter="url(#quantumGlow)"/>
+                            <!-- Quantum particle paths -->
+                            <path d="M20 50 Q50 20 80 50 Q50 80 20 50" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+                            <path d="M50 20 Q80 50 50 80 Q20 50 50 20" fill="none" stroke="#4682B4" stroke-width="1" opacity="0.4"/>
+                            <circle cx="35" cy="35" r="2" fill="#ffffff" opacity="0.8"/>
+                            <circle cx="65" cy="65" r="2" fill="#1a1a1a" opacity="0.8"/>
                         </svg>
                     </div>
                     
@@ -1394,7 +1572,7 @@
                                     fill="url(#whiteDominanceGradient)"
                                     stroke="#ffffff"
                                     stroke-width="3"
-                                    filter="url(#dualGlow)"/>
+                                    filter="url(#quantumGlow)"/>
                             <!-- Detailed white moon features -->
                             <circle cx="35" cy="35" r="4" fill="#e8e8e8" opacity="0.7"/>
                             <circle cx="65" cy="40" r="3" fill="#e8e8e8" opacity="0.5"/>
@@ -1417,7 +1595,7 @@
                                     fill="url(#blackDominanceGradient)"
                                     stroke="#C0C0C0"
                                     stroke-width="3"
-                                    filter="url(#dualGlow)"/>
+                                    filter="url(#quantumGlow)"/>
                             <!-- Detailed black moon features -->
                             <circle cx="32" cy="32" r="4" fill="#111" opacity="0.9"/>
                             <circle cx="62" cy="38" r="3" fill="#111" opacity="0.7"/>
@@ -1456,9 +1634,9 @@
                     </div>
 
                     <h2 class="tagline">
-                        <span class="tagline-icon">✨</span>
-                        <span class="galactic-text">Where Light Meets Shadow, East Meets West</span>
-                        <span class="tagline-icon">✨</span>
+                        <span class="tagline-icon">⚛</span>
+                        <span class="galactic-text">Where Quantum Meets Consciousness</span>
+                        <span class="tagline-icon">🌌</span>
                     </h2>
                 </div>
             </div>
@@ -1476,29 +1654,29 @@
         <!-- Cosmic Cards Section -->
         <section class="cosmic-showcase">
             <div class="cosmic-card">
-                <h3 class="galactic-text">Digital Consciousness Explorer</h3>
-                <p>Journey through the intersection of artificial intelligence and human creativity, where algorithms become collaborators in the dance of imagination. Like the dual moons above, exploring both the light and shadow of digital consciousness.</p>
+                <h3 class="galactic-text">Quantum Consciousness Explorer</h3>
+                <p>Journey through the quantum realm where consciousness meets artificial intelligence. Like particles in superposition, exploring multiple realities simultaneously until the moment of creative observation collapses infinite possibilities into tangible innovation.</p>
                 <button class="cosmic-button">
-                    <span class="galactic-text">Explore Universe</span>
-                    <i class="fas fa-rocket"></i>
+                    <span class="galactic-text">Enter Quantum Realm</span>
+                    <i class="fas fa-atom"></i>
                 </button>
             </div>
 
             <div class="cosmic-card">
-                <h3 class="galactic-text">Cultural Bridge Builder</h3>
-                <p>From Bangkok's ancient temples to London's innovation labs, weaving stories that connect Eastern wisdom with Western technology. The white and black moons represent this eternal dance of cultural synthesis.</p>
+                <h3 class="galactic-text">Interdimensional Bridge Builder</h3>
+                <p>From Bangkok's quantum temples to London's innovation laboratories, weaving narratives that transcend dimensional boundaries. The dual moons represent the eternal dance between parallel universes of thought and creation.</p>
                 <button class="cosmic-button">
-                    <span class="galactic-text">Cross Bridges</span>
-                    <i class="fas fa-globe"></i>
+                    <span class="galactic-text">Cross Dimensions</span>
+                    <i class="fas fa-portal-exit"></i>
                 </button>
             </div>
 
             <div class="cosmic-card">
-                <h3 class="galactic-text">Cosmic Storyteller</h3>
-                <p>Crafting narratives that explore the liminal spaces between reality and possibility, tradition and innovation, human and artificial. Each story reflects the duality of our cosmic existence.</p>
+                <h3 class="galactic-text">Quantum Narrative Architect</h3>
+                <p>Crafting stories that exist in multiple states simultaneously, exploring the liminal spaces between reality and possibility. Each narrative reflects the quantum nature of human experience and artificial consciousness.</p>
                 <button class="cosmic-button">
-                    <span class="galactic-text">Read Stories</span>
-                    <i class="fas fa-book-open"></i>
+                    <span class="galactic-text">Decode Stories</span>
+                    <i class="fas fa-code-branch"></i>
                 </button>
             </div>
         </section>
@@ -1506,32 +1684,32 @@
         <!-- Cosmic Form -->
         <section class="cosmic-contact">
             <h2 class="galactic-text" style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">
-                Connect Across the Cosmos
+                Connect Across Quantum Dimensions
             </h2>
             <form class="cosmic-form">
-                <input type="text" class="cosmic-input" placeholder="Enter your cosmic message...">
+                <input type="text" class="cosmic-input" placeholder="Enter your quantum transmission...">
                 <button type="submit" class="cosmic-button">
-                    <span class="galactic-text">Send to the Stars</span>
-                    <i class="fas fa-paper-plane"></i>
+                    <span class="galactic-text">Send Through Nexus</span>
+                    <i class="fas fa-satellite-dish"></i>
                 </button>
             </form>
         </section>
     </main>
 
-    <!-- Enhanced JavaScript with New Dual Moon System -->
+    <!-- Enhanced JavaScript with Quantum Nexus System -->
     <script>
-        // Enhanced Cosmic System with Figure-8 Dual Moon Support
-        class AdvancedCosmicEnhancer {
+        // Enhanced Cosmic System with Quantum Nexus Support
+        class QuantumCosmicEnhancer {
             constructor() {
                 this.initParticlesJS();
                 this.initDynamicStars();
                 this.initEnhancedShootingStars();
                 this.initMouseTracking();
-                this.initDualMoonPhaseSystem();
-                this.initMoonTrailSystem();
+                this.initQuantumMoonPhaseSystem();
+                this.initQuantumTrailSystem();
                 this.initScrollEffects();
                 this.initAnimeJSAnimations();
-                this.initThreeJSBackground();
+                this.initQuantumParticleSystem();
                 this.initAudioReactiveElements();
             }
 
@@ -1541,7 +1719,7 @@
                     particlesJS('particles-js', {
                         particles: {
                             number: {
-                                value: 120,
+                                value: 150,
                                 density: {
                                     enable: true,
                                     value_area: 800
@@ -1551,7 +1729,7 @@
                                 value: ['#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#ffffff', '#1a1a1a']
                             },
                             shape: {
-                                type: 'circle',
+                                type: ['circle', 'triangle'],
                                 stroke: {
                                     width: 0,
                                     color: '#000000'
@@ -1562,31 +1740,31 @@
                                 random: true,
                                 anim: {
                                     enable: true,
-                                    speed: 1,
+                                    speed: 1.2,
                                     opacity_min: 0.1,
                                     sync: false
                                 }
                             },
                             size: {
-                                value: 2,
+                                value: 2.5,
                                 random: true,
                                 anim: {
                                     enable: true,
-                                    speed: 2,
+                                    speed: 2.5,
                                     size_min: 0.5,
                                     sync: false
                                 }
                             },
                             line_linked: {
                                 enable: true,
-                                distance: 150,
+                                distance: 120,
                                 color: '#C0C0C0',
-                                opacity: 0.1,
-                                width: 1
+                                opacity: 0.15,
+                                width: 1.2
                             },
                             move: {
                                 enable: true,
-                                speed: 0.8,
+                                speed: 1.2,
                                 direction: 'none',
                                 random: true,
                                 straight: false,
@@ -1594,8 +1772,8 @@
                                 bounce: false,
                                 attract: {
                                     enable: true,
-                                    rotateX: 600,
-                                    rotateY: 1200
+                                    rotateX: 800,
+                                    rotateY: 1600
                                 }
                             }
                         },
@@ -1614,13 +1792,13 @@
                             },
                             modes: {
                                 grab: {
-                                    distance: 140,
+                                    distance: 160,
                                     line_linked: {
-                                        opacity: 0.3
+                                        opacity: 0.4
                                     }
                                 },
                                 push: {
-                                    particles_nb: 4
+                                    particles_nb: 6
                                 }
                             }
                         },
@@ -1634,40 +1812,36 @@
                 const container = document.querySelector('.dynamic-stars');
                 if (!container) return;
 
-                // Create initial stars
-                for (let i = 0; i < 25; i++) {
+                for (let i = 0; i < 30; i++) {
                     setTimeout(() => {
-                        this.createShiningStars(container);
-                    }, i * 200);
+                        this.createQuantumStars(container);
+                    }, i * 150);
                 }
 
-                // Continuous star creation
                 setInterval(() => {
-                    this.createShiningStars(container);
-                }, 3000 + Math.random() * 4000);
+                    this.createQuantumStars(container);
+                }, 2500 + Math.random() * 3500);
             }
 
-            createShiningStars(container) {
+            createQuantumStars(container) {
                 const star = document.createElement('div');
                 star.className = 'shine-star';
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
                 star.style.animationDelay = Math.random() * 4 + 's';
-                star.style.animationDuration = (3 + Math.random() * 3) + 's';
+                star.style.animationDuration = (2.5 + Math.random() * 4) + 's';
                 
-                // Random colors for variety including white and black themes
-                const colors = ['#ffffff', '#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#1a1a1a'];
+                const colors = ['#ffffff', '#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#1a1a1a', '#8A2BE2'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 star.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
                 
                 container.appendChild(star);
                 
-                // Remove star after animation
                 setTimeout(() => {
                     if (star.parentNode) {
                         star.remove();
                     }
-                }, 8000);
+                }, 10000);
             }
 
             // Enhanced Shooting Stars
@@ -1676,29 +1850,26 @@
                 if (!container) return;
 
                 setInterval(() => {
-                    this.createEnhancedShootingStar(container);
-                }, 1500 + Math.random() * 3000);
+                    this.createQuantumShootingStar(container);
+                }, 1200 + Math.random() * 2800);
             }
 
-            createEnhancedShootingStar(container) {
+            createQuantumShootingStar(container) {
                 const star = document.createElement('div');
                 star.className = 'shooting-star';
                 
-                // Random starting position
                 const startX = Math.random() * 30;
                 const startY = Math.random() * 30;
                 star.style.left = startX + '%';
                 star.style.top = startY + '%';
                 
-                // Random animation properties
                 star.style.animationDelay = Math.random() * 1 + 's';
-                star.style.animationDuration = (2 + Math.random() * 2) + 's';
+                star.style.animationDuration = (1.8 + Math.random() * 2.5) + 's';
                 
-                // Random colors including duality theme
-                const colors = ['#ffffff', '#C0C0C0', '#4682B4', '#FFD700', '#FF69B4', '#1a1a1a'];
+                const colors = ['#ffffff', '#C0C0C0', '#4682B4', '#FFD700', '#FF69B4', '#1a1a1a', '#00FFFF'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 star.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
-                star.style.boxShadow = `0 0 15px ${color}`;
+                star.style.boxShadow = `0 0 20px ${color}`;
                 
                 container.appendChild(star);
                 
@@ -1706,7 +1877,7 @@
                     if (star.parentNode) {
                         star.remove();
                     }
-                }, 5000);
+                }, 6000);
             }
 
             // Enhanced Mouse Tracking
@@ -1717,11 +1888,9 @@
                     mouseX = e.clientX;
                     mouseY = e.clientY;
                     
-                    // Update CSS variables for dynamic effects
                     document.documentElement.style.setProperty('--mouse-x', mouseX + 'px');
                     document.documentElement.style.setProperty('--mouse-y', mouseY + 'px');
                     
-                    // Card hover effects
                     const cards = document.querySelectorAll('.cosmic-card');
                     cards.forEach(card => {
                         const rect = card.getBoundingClientRect();
@@ -1732,10 +1901,10 @@
                         card.style.setProperty('--mouse-y', y + '%');
                     });
 
-                    // Parallax effect for background layers
-                    const parallaxElements = document.querySelectorAll('.nebula-layer, .star-field');
+                    // Enhanced parallax for quantum effects
+                    const parallaxElements = document.querySelectorAll('.nebula-layer, .star-field, .quantum-portal');
                     parallaxElements.forEach((element, index) => {
-                        const speed = (index + 1) * 0.02;
+                        const speed = (index + 1) * 0.025;
                         const x = (mouseX - window.innerWidth / 2) * speed;
                         const y = (mouseY - window.innerHeight / 2) * speed;
                         element.style.transform = `translate(${x}px, ${y}px)`;
@@ -1743,26 +1912,23 @@
                 });
             }
 
-            // Enhanced Dual Moon Phase System
-            initDualMoonPhaseSystem() {
-                const phases = ['dual', 'white', 'black'];
+            // Quantum Moon Phase System
+            initQuantumMoonPhaseSystem() {
+                const phases = ['quantum', 'white', 'black'];
                 let currentPhase = 0;
 
-                const cycleMoonPhases = () => {
+                const cycleQuantumPhases = () => {
                     const currentMoon = document.querySelector('.moon-phase.active');
                     if (currentMoon) {
-                        currentMoon.classList.add('exiting');
                         currentMoon.classList.remove('active');
+                        currentMoon.classList.add('exiting');
                     }
 
+                    currentPhase = (currentPhase + 1) % phases.length;
+                    const nextPhase = phases[currentPhase];
+                    const nextMoon = document.querySelector(`.moon-phase[data-phase="${nextPhase}"]`);
+
                     setTimeout(() => {
-                        if (currentMoon) {
-                            currentMoon.classList.remove('exiting');
-                        }
-                        
-                        currentPhase = (currentPhase + 1) % phases.length;
-                        const nextMoon = document.querySelector(`[data-phase="${phases[currentPhase]}"]`);
-                        
                         if (nextMoon) {
                             nextMoon.classList.add('entering');
                             setTimeout(() => {
@@ -1770,341 +1936,877 @@
                                 nextMoon.classList.add('active');
                             }, 100);
                         }
-                    }, 750);
+
+                        if (currentMoon) {
+                            setTimeout(() => {
+                                currentMoon.classList.remove('exiting');
+                            }, 1500);
+                        }
+                    }, 200);
+
+                    // Trigger quantum effects based on phase
+                    this.triggerQuantumPhaseEffects(nextPhase);
                 };
 
-                // Initial cycle
-                setTimeout(cycleMoonPhases, 4000);
-                
-                // Regular cycling
-                setInterval(cycleMoonPhases, 8000);
+                // Cycle through phases every 8 seconds
+                setInterval(cycleQuantumPhases, 8000);
+
+                // Manual phase switching on click
+                document.querySelectorAll('.moon-phase').forEach(phase => {
+                    phase.addEventListener('click', () => {
+                        const targetPhase = phase.dataset.phase;
+                        const targetIndex = phases.indexOf(targetPhase);
+                        if (targetIndex !== -1 && targetIndex !== currentPhase) {
+                            currentPhase = targetIndex - 1; // Will be incremented in cycleQuantumPhases
+                            cycleQuantumPhases();
+                        }
+                    });
+                });
             }
 
-            // NEW: Moon Trail System for Figure-8 Orbits
-            initMoonTrailSystem() {
-                const dualMoonSystem = document.querySelector('.dual-moon-system');
-                if (!dualMoonSystem) return;
+            // Quantum Phase Effects
+            triggerQuantumPhaseEffects(phase) {
+                const quantumNexus = document.querySelector('.quantum-nexus');
+                const quantumPortal = document.querySelector('.quantum-portal');
+                
+                // Remove existing phase classes
+                quantumNexus?.classList.remove('quantum-active', 'white-active', 'black-active');
+                quantumPortal?.classList.remove('quantum-active', 'white-active', 'black-active');
+                
+                // Add new phase class
+                quantumNexus?.classList.add(`${phase}-active`);
+                quantumPortal?.classList.add(`${phase}-active`);
 
-                const createTrail = (moon, trailClass) => {
+                // Create phase-specific particle bursts
+                this.createQuantumPhaseBurst(phase);
+
+                // Update color scheme dynamically
+                this.updateQuantumColorScheme(phase);
+            }
+
+            // Quantum Phase Particle Burst
+            createQuantumPhaseBurst(phase) {
+                const container = document.querySelector('.dual-moon-system');
+                if (!container) return;
+
+                const colors = {
+                    quantum: ['#4682B4', '#8A2BE2', '#00FFFF', '#FFD700'],
+                    white: ['#ffffff', '#f0f0f0', '#e8e8e8', '#C0C0C0'],
+                    black: ['#1a1a1a', '#2a2a2a', '#4a4a4a', '#C0C0C0']
+                };
+
+                const phaseColors = colors[phase] || colors.quantum;
+
+                for (let i = 0; i < 12; i++) {
+                    setTimeout(() => {
+                        const particle = document.createElement('div');
+                        particle.style.position = 'absolute';
+                        particle.style.width = '4px';
+                        particle.style.height = '4px';
+                        particle.style.borderRadius = '50%';
+                        particle.style.left = '50%';
+                        particle.style.top = '50%';
+                        particle.style.transform = 'translate(-50%, -50%)';
+                        particle.style.pointerEvents = 'none';
+                        particle.style.zIndex = '10';
+                        
+                        const color = phaseColors[Math.floor(Math.random() * phaseColors.length)];
+                        particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
+                        particle.style.boxShadow = `0 0 15px ${color}`;
+
+                        const angle = (i / 12) * Math.PI * 2;
+                        const distance = 80 + Math.random() * 40;
+                        const endX = Math.cos(angle) * distance;
+                        const endY = Math.sin(angle) * distance;
+
+                        container.appendChild(particle);
+
+                        // Animate particle burst
+                        anime({
+                            targets: particle,
+                            translateX: endX,
+                            translateY: endY,
+                            scale: [1, 0],
+                            opacity: [1, 0],
+                            duration: 1500 + Math.random() * 1000,
+                            easing: 'easeOutQuart',
+                            complete: () => {
+                                if (particle.parentNode) {
+                                    particle.remove();
+                                }
+                            }
+                        });
+                    }, i * 50);
+                }
+            }
+
+            // Dynamic Color Scheme Updates
+            updateQuantumColorScheme(phase) {
+                const root = document.documentElement;
+                
+                const colorSchemes = {
+                    quantum: {
+                        '--primary-accent': '#4682B4',
+                        '--secondary-accent': '#8A2BE2',
+                        '--tertiary-accent': '#00FFFF'
+                    },
+                    white: {
+                        '--primary-accent': '#ffffff',
+                        '--secondary-accent': '#f0f0f0',
+                        '--tertiary-accent': '#e8e8e8'
+                    },
+                    black: {
+                        '--primary-accent': '#1a1a1a',
+                        '--secondary-accent': '#2a2a2a',
+                        '--tertiary-accent': '#4a4a4a'
+                    }
+                };
+
+                const scheme = colorSchemes[phase];
+                if (scheme) {
+                    Object.entries(scheme).forEach(([property, value]) => {
+                        root.style.setProperty(property, value);
+                    });
+                }
+            }
+
+            // Quantum Trail System for Orbiting Moons
+            initQuantumTrailSystem() {
+                const whiteMoon = document.querySelector('.white-moon');
+                const blackMoon = document.querySelector('.black-moon');
+                const container = document.querySelector('.dual-moon-system');
+
+                if (!whiteMoon || !blackMoon || !container) return;
+
+                const createTrail = (moon, className) => {
+                    const rect = moon.getBoundingClientRect();
+                    const containerRect = container.getBoundingClientRect();
+                    
                     const trail = document.createElement('div');
-                    trail.className = `moon-trail ${trailClass}`;
+                    trail.className = `moon-trail ${className}`;
+                    trail.style.left = (rect.left - containerRect.left + rect.width / 2) + 'px';
+                    trail.style.top = (rect.top - containerRect.top + rect.height / 2) + 'px';
                     
-                    const moonRect = moon.getBoundingClientRect();
-                    const systemRect = dualMoonSystem.getBoundingClientRect();
+                    container.appendChild(trail);
                     
-                    trail.style.left = (moonRect.left - systemRect.left + moonRect.width / 2) + 'px';
-                    trail.style.top = (moonRect.top - systemRect.top + moonRect.height / 2) + 'px';
-                    
-                    dualMoonSystem.appendChild(trail);
-                    
-                    // Remove trail after animation
                     setTimeout(() => {
                         if (trail.parentNode) {
                             trail.remove();
                         }
-                    }, 2000);
+                    }, 2500);
                 };
 
                 // Create trails periodically
                 setInterval(() => {
-                    const whiteMoon = document.querySelector('.white-moon');
-                    const blackMoon = document.querySelector('.black-moon');
-                    
-                    if (whiteMoon) createTrail(whiteMoon, 'white-trail');
-                    if (blackMoon) createTrail(blackMoon, 'black-trail');
-                }, 200);
+                    createTrail(whiteMoon, 'white-trail');
+                }, 150);
+
+                setInterval(() => {
+                    createTrail(blackMoon, 'black-trail');
+                }, 180);
             }
 
             // Enhanced Scroll Effects
             initScrollEffects() {
-                let ticking = false;
-                
-                const updateScrollEffects = () => {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -0.5;
-                    
-                    // Parallax backgrounds
-                    const deepSpace = document.querySelector('.deep-space-layer');
-                    const nebula = document.querySelector('.nebula-layer');
-                    const starField = document.querySelector('.star-field');
-                    
-                    if (deepSpace) deepSpace.style.transform = `translateY(${rate * 0.2}px)`;
-                    if (nebula) nebula.style.transform = `translateY(${rate * 0.4}px)`;
-                    if (starField) starField.style.transform = `translateY(${rate * 0.6}px)`;
-                    
-                    ticking = false;
-                };
-                
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        requestAnimationFrame(updateScrollEffects);
-                        ticking = true;
-                    }
-                });
+                if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                    gsap.registerPlugin(ScrollTrigger);
+
+                    // Parallax scrolling for cosmic elements
+                    gsap.to('.deep-space-layer', {
+                        yPercent: -50,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: 'body',
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true
+                        }
+                    });
+
+                    gsap.to('.nebula-layer', {
+                        yPercent: -30,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: 'body',
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true
+                        }
+                    });
+
+                    gsap.to('.star-field', {
+                        yPercent: -20,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: 'body',
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true
+                        }
+                    });
+
+                    // Quantum nexus rotation on scroll
+                    gsap.to('.quantum-nexus', {
+                        rotation: 360,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: 'body',
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1
+                        }
+                    });
+
+                    // Card animations
+                    gsap.utils.toArray('.cosmic-card').forEach((card, index) => {
+                        gsap.fromTo(card, 
+                            {
+                                opacity: 0,
+                                y: 100,
+                                rotationX: 15
+                            },
+                            {
+                                opacity: 1,
+                                y: 0,
+                                rotationX: 0,
+                                duration: 1.2,
+                                ease: 'power3.out',
+                                scrollTrigger: {
+                                    trigger: card,
+                                    start: 'top 80%',
+                                    end: 'bottom 20%',
+                                    toggleActions: 'play none none reverse'
+                                }
+                            }
+                        );
+                    });
+                }
             }
 
             // Anime.js Animations
             initAnimeJSAnimations() {
-                if (typeof anime === 'undefined') return;
-
-                // Staggered role animations
-                anime({
-                    targets: '.role',
-                    translateY: [30, 0],
-                    opacity: [0, 1],
-                    delay: anime.stagger(200, {start: 1000}),
-                    duration: 800,
-                    easing: 'easeOutElastic(1, .8)'
-                });
-
-                // Enhanced floating animation for dual moon system
-                anime({
-                    targets: '.dual-moon-system',
-                    translateY: [-12, 12],
-                    duration: 8000,
-                    direction: 'alternate',
-                    loop: true,
-                    easing: 'easeInOutSine'
-                });
-
-                // Duality core morphing animation
-                anime({
-                    targets: '.duality-core',
-                    scale: [1, 1.1, 1],
-                    duration: 6000,
-                    loop: true,
-                    easing: 'easeInOutQuad'
-                });
-
-                // Orbital rings breathing effect
-                anime({
-                    targets: '.orbital-ring',
-                    scale: [1, 1.05, 1],
-                    opacity: [0.3, 0.7, 0.3],
-                    duration: 4000,
-                    delay: anime.stagger(1000),
-                    loop: true,
-                    easing: 'easeInOutSine'
-                });
-
-                // Cosmic button hover effects
-                document.querySelectorAll('.cosmic-button').forEach(button => {
-                    button.addEventListener('mouseenter', () => {
-                        anime({
-                            targets: button,
-                            scale: 1.05,
-                            duration: 300,
-                            easing: 'easeOutElastic(1, .6)'
-                        });
+                if (typeof anime !== 'undefined') {
+                    // Quantum symbol pulsing
+                    anime({
+                        targets: '.quantum-symbol',
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 180, 360],
+                        duration: 8000,
+                        easing: 'easeInOutSine',
+                        loop: true
                     });
-                    
-                    button.addEventListener('mouseleave', () => {
-                        anime({
-                            targets: button,
-                            scale: 1,
-                            duration: 300,
-                            easing: 'easeOutElastic(1, .6)'
-                        });
+
+                    // Role container stagger animation
+                    anime({
+                        targets: '.role',
+                        translateY: [50, 0],
+                        opacity: [0, 1],
+                        delay: anime.stagger(200, {start: 1000}),
+                        duration: 1200,
+                        easing: 'easeOutElastic(1, .8)'
                     });
-                });
-            }
 
-            // Three.js Background Enhancement
-            initThreeJSBackground() {
-                if (typeof THREE === 'undefined') return;
+                    // Orbital rings breathing effect
+                    anime({
+                        targets: '.orbital-ring',
+                        scale: [1, 1.05, 1],
+                        opacity: [0.3, 0.8, 0.3],
+                        duration: 6000,
+                        delay: anime.stagger(1000),
+                        easing: 'easeInOutSine',
+                        loop: true
+                    });
 
-                console.log('Three.js available for advanced 3D dual moon effects');
-                
-                // Future implementation could include:
-                // - 3D dual moon system with realistic physics
-                // - Interactive orbital mechanics
-                // - Gravitational effects visualization
-                // - Figure-8 orbital patterns in 3D space
-            }
-
-            // Audio Reactive Elements
-            initAudioReactiveElements() {
-                if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
-                    console.log('Audio context available for dual moon reactive animations');
-                    
-                    // Future implementation:
-                    // - Audio-reactive moon phases
-                    // - Sound-synchronized orbital speeds
-                    // - Harmonic resonance effects for Figure-8 patterns
-                }
-            }
-        }
-
-        // Enhanced GSAP Animations for Figure-8 Dual Moon System
-        class AdvancedGSAPAnimations {
-            constructor() {
-                if (typeof gsap !== 'undefined') {
-                    gsap.registerPlugin(ScrollTrigger, TextPlugin);
-                    this.initAdvancedAnimations();
+                    // Quantum particles orbital motion
+                    anime({
+                        targets: '.quantum-particle',
+                        rotate: 360,
+                        duration: anime.stagger([3000, 5000]),
+                        easing: 'linear',
+                        loop: true
+                    });
                 }
             }
 
-            initAdvancedAnimations() {
-                // Master timeline
-                const masterTL = gsap.timeline();
-                
-                // Enhanced hero entrance
-                masterTL
-                    .from('.greeting', { 
-                        opacity: 0, 
-                        y: 50, 
-                        duration: 1.2, 
-                        ease: 'power3.out',
-                        delay: 0.5 
-                    })
-                    .from('.name-primary', { 
-                        opacity: 0, 
-                        scale: 0.7, 
-                        duration: 2, 
-                        ease: 'elastic.out(1, 0.4)' 
-                    }, '-=0.6')
-                    .from('.name-secondary', { 
-                        opacity: 0, 
-                        y: 30, 
-                        duration: 1.2,
-                        ease: 'power2.out' 
-                    }, '-=0.8')
-                    .from('.dual-moon-system', { 
-                        opacity: 0, 
-                        scale: 0.3, 
-                        rotation: 180,
-                        duration: 2.5,
-                        ease: 'back.out(1.7)' 
-                    }, '-=1')
-                    .from('.tagline', { 
-                        opacity: 0, 
-                        scale: 0.8, 
-                        duration: 1.5, 
-                        ease: 'elastic.out(1, 0.6)' 
-                    }, '-=0.5');
+            // Quantum Particle System
+            initQuantumParticleSystem() {
+                const quantumNexus = document.querySelector('.quantum-nexus');
+                if (!quantumNexus) return;
 
-                // Scroll-triggered card animations
-                gsap.utils.toArray('.cosmic-card').forEach((card, index) => {
-                    gsap.fromTo(card, 
-                        { 
-                            opacity: 0, 
-                            y: 80, 
-                            rotationY: -20,
-                            scale: 0.9
-                        },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            rotationY: 0,
-                            scale: 1,
-                            duration: 1.5,
-                            ease: 'power3.out',
-                            scrollTrigger: {
-                                trigger: card,
-                                start: 'top 85%',
-                                end: 'bottom 15%',
-                                toggleActions: 'play none none reverse'
-                            },
-                            delay: index * 0.3
+                setInterval(() => {
+                    this.createQuantumParticle(quantumNexus);
+                }, 800 + Math.random() * 1200);
+            }
+
+            createQuantumParticle(container) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = '3px';
+                particle.style.height = '3px';
+                particle.style.borderRadius = '50%';
+                particle.style.left = '50%';
+                particle.style.top = '50%';
+                particle.style.transform = 'translate(-50%, -50%)';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '8';
+
+                const colors = ['#ffffff', '#4682B4', '#8A2BE2', '#00FFFF', '#FFD700', '#C0C0C0'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
+                particle.style.boxShadow = `0 0 10px ${color}`;
+
+                container.appendChild(particle);
+
+                // Quantum particle behavior
+                if (typeof anime !== 'undefined') {
+                    const angle = Math.random() * Math.PI * 2;
+                    const radius = 30 + Math.random() * 20;
+                    const endX = Math.cos(angle) * radius;
+                    const endY = Math.sin(angle) * radius;
+
+                    anime({
+                        targets: particle,
+                        translateX: [0, endX, 0],
+                        translateY: [0, endY, 0],
+                        scale: [0, 1.5, 0],
+                        opacity: [0, 1, 0],
+                        rotate: [0, 720],
+                        duration: 3000 + Math.random() * 2000,
+                        easing: 'easeInOutSine',
+                        complete: () => {
+                            if (particle.parentNode) {
+                                particle.remove();
+                            }
                         }
-                    );
-                });
-
-                // Enhanced cosmic energy field animation
-                gsap.to('.cosmic-energy-field', {
-                    rotation: 360,
-                    duration: 30,
-                    ease: 'none',
-                    repeat: -1
-                });
-
-                // Enhanced text shimmer
-                gsap.to('.galactic-text', {
-                    backgroundPosition: '200% center',
-                    duration: 3,
-                    ease: 'none',
-                    repeat: -1
-                });
-
-                // Floating elements with enhanced physics
-                gsap.to('.tagline-icon', {
-                    y: -15,
-                    rotation: 15,
-                    duration: 3,
-                    ease: 'power2.inOut',
-                    repeat: -1,
-                    yoyo: true,
-                    stagger: 0.8
-                });
-
-                // Interactive hover animations
-                document.querySelectorAll('.role').forEach(role => {
-                    role.addEventListener('mouseenter', () => {
-                        gsap.to(role, {
-                            scale: 1.1,
-                            y: -8,
-                            rotation: 2,
-                            duration: 0.4,
-                            ease: 'power2.out'
-                        });
                     });
-                    
-                    role.addEventListener('mouseleave', () => {
-                        gsap.to(role, {
-                            scale: 1,
-                            y: 0,
-                            rotation: 0,
-                            duration: 0.4,
-                            ease: 'power2.out'
-                        });
+                }
+            }
+
+            // Audio Reactive Elements (Web Audio API)
+            initAudioReactiveElements() {
+                // Create ambient cosmic audio context
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+
+                    // Very subtle ambient frequency
+                    oscillator.frequency.setValueAtTime(40, audioContext.currentTime); // Sub-bass
+                    gainNode.gain.setValueAtTime(0.001, audioContext.currentTime); // Very quiet
+
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+
+                    // Modulate frequency based on quantum phase
+                    const modulateAmbientSound = (phase) => {
+                        const frequencies = {
+                            quantum: 40,
+                            white: 60,
+                            black: 30
+                        };
+                        
+                        if (oscillator && audioContext.state === 'running') {
+                            oscillator.frequency.setValueAtTime(
+                                frequencies[phase] || 40, 
+                                audioContext.currentTime
+                            );
+                        }
+                    };
+
+                    // Connect to quantum phase system
+                    document.addEventListener('quantumPhaseChange', (e) => {
+                        modulateAmbientSound(e.detail.phase);
                     });
-                });
+
+                    // Start very subtle ambient sound on user interaction
+                    document.addEventListener('click', () => {
+                        if (audioContext.state === 'suspended') {
+                            audioContext.resume().then(() => {
+                                oscillator.start();
+                            });
+                        }
+                    }, { once: true });
+
+                } catch (error) {
+                    console.log('Audio context not available:', error);
+                }
             }
         }
 
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize all enhancement systems
-            new AdvancedCosmicEnhancer();
-            new AdvancedGSAPAnimations();
-            
-            // Add keyboard navigation support
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Tab') {
-                    document.body.classList.add('keyboard-navigation');
-                }
-            });
-            
-            document.addEventListener('mousedown', () => {
-                document.body.classList.remove('keyboard-navigation');
-            });
+        // Enhanced Interaction Handlers
+        class QuantumInteractionSystem {
+            constructor() {
+                this.initRoleInteractions();
+                this.initButtonEffects();
+                this.initFormEnhancements();
+                this.initKeyboardNavigation();
+                this.initTouchGestures();
+            }
 
-            // Performance monitoring
-            if ('performance' in window) {
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        const perfData = performance.getEntriesByType('navigation')[0];
-                        console.log('🌙 Cosmic page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-                    }, 0);
+            initRoleInteractions() {
+                document.querySelectorAll('.role').forEach(role => {
+                    role.addEventListener('click', () => {
+                        const roleType = role.dataset.role;
+                        this.triggerRoleEffect(roleType, role);
+                    });
+
+                    role.addEventListener('mouseenter', () => {
+                        this.createRoleParticles(role);
+                    });
                 });
             }
-        });
 
-        // Error handling and graceful degradation
-        window.addEventListener('error', (e) => {
-            console.warn('🌙 Cosmic animation error handled gracefully:', e.message);
-        });
+            triggerRoleEffect(roleType, element) {
+                const effects = {
+                    designer: () => this.createColorBurst(element),
+                    writer: () => this.createTextParticles(element),
+                    researcher: () => this.createDataStream(element),
+                    innovator: () => this.createQuantumRipple(element)
+                };
 
-        // Resize handler for responsive animations
-        window.addEventListener('resize', () => {
-            // Reinitialize particles if needed
-            if (typeof pJSDom !== 'undefined' && pJSDom[0]) {
-                pJSDom[0].pJS.fn.particlesRefresh();
+                const effect = effects[roleType];
+                if (effect) effect();
             }
-        });
-    </script>
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            createColorBurst(element) {
+                const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+                const rect = element.getBoundingClientRect();
+
+                for (let i = 0; i < 8; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = rect.left + rect.width / 2 + 'px';
+                    particle.style.top = rect.top + rect.height / 2 + 'px';
+                    particle.style.width = '6px';
+                    particle.style.height = '6px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '1000';
+
+                    document.body.appendChild(particle);
+
+                    if (typeof anime !== 'undefined') {
+                        const angle = (i / 8) * Math.PI * 2;
+                        anime({
+                            targets: particle,
+                            translateX: Math.cos(angle) * 100,
+                            translateY: Math.sin(angle) * 100,
+                            scale: [1, 0],
+                            opacity: [1, 0],
+                            duration: 1000,
+                            easing: 'easeOutQuart',
+                            complete: () => particle.remove()
+                        });
+                    }
+                }
+            }
+
+            createTextParticles(element) {
+                const words = ['✍️', '📝', '✨', '💭', '📖', '🖋️'];
+                const rect = element.getBoundingClientRect();
+
+                words.forEach((word, i) => {
+                    const particle = document.createElement('div');
+                    particle.textContent = word;
+                    particle.style.position = 'fixed';
+                    particle.style.left = rect.left + rect.width / 2 + 'px';
+                    particle.style.top = rect.top + rect.height / 2 + 'px';
+                    particle.style.fontSize = '20px';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '1000';
+
+                    document.body.appendChild(particle);
+
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: particle,
+                            translateY: -80 - (i * 20),
+                            translateX: (Math.random() - 0.5) * 60,
+                            opacity: [1, 0],
+                            scale: [1, 1.5],
+                            duration: 2000,
+                            delay: i * 200,
+                            easing: 'easeOutQuart',
+                            complete: () => particle.remove()
+                        });
+                    }
+                });
+            }
+
+            createDataStream(element) {
+                const rect = element.getBoundingClientRect();
+                const binary = ['0', '1'];
+
+                for (let i = 0; i < 15; i++) {
+                    const digit = document.createElement('div');
+                    digit.textContent = binary[Math.floor(Math.random() * 2)];
+                    digit.style.position = 'fixed';
+                    digit.style.left = rect.left + Math.random() * rect.width + 'px';
+                    digit.style.top = rect.top + 'px';
+                    digit.style.color = '#00FF00';
+                    digit.style.fontFamily = 'monospace';
+                    digit.style.fontSize = '14px';
+                    digit.style.pointerEvents = 'none';
+                    digit.style.zIndex = '1000';
+
+                    document.body.appendChild(digit);
+
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: digit,
+                            translateY: 200,
+                            opacity: [1, 0],
+                            duration: 2000 + Math.random() * 1000,
+                            delay: i * 100,
+                            easing: 'linear',
+                            complete: () => digit.remove()
+                        });
+                    }
+                }
+            }
+
+            createQuantumRipple(element) {
+                const rect = element.getBoundingClientRect();
+                
+                for (let i = 0; i < 3; i++) {
+                    const ripple = document.createElement('div');
+                    ripple.style.position = 'fixed';
+                    ripple.style.left = rect.left + rect.width / 2 + 'px';
+                    ripple.style.top = rect.top + rect.height / 2 + 'px';
+                    ripple.style.width = '0px';
+                    ripple.style.height = '0px';
+                    ripple.style.border = '2px solid #4682B4';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.transform = 'translate(-50%, -50%)';
+                    ripple.style.pointerEvents = 'none';
+                    ripple.style.zIndex = '1000';
+
+                    document.body.appendChild(ripple);
+
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: ripple,
+                            width: 200,
+                            height: 200,
+                            opacity: [0.8, 0],
+                            duration: 1500,
+                            delay: i * 300,
+                            easing: 'easeOutQuart',
+                            complete: () => ripple.remove()
+                        });
+                    }
+                }
+            }
+
+            createRoleParticles(element) {
+                const rect = element.getBoundingClientRect();
+                
+                for (let i = 0; i < 3; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = rect.left + Math.random() * rect.width + 'px';
+                    particle.style.top = rect.top + Math.random() * rect.height + 'px';
+                    particle.style.width = '3px';
+                    particle.style.height = '3px';
+                    particle.style.background = '#C0C0C0';
+                    particle.style.borderRadius = '50%';
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '1000';
+                    particle.style.boxShadow = '0 0 10px #C0C0C0';
+
+                    document.body.appendChild(particle);
+
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: particle,
+                            translateY: -30,
+                            opacity: [1, 0],
+                            scale: [1, 0],
+                            duration: 1500,
+                            easing: 'easeOutQuart',
+                            complete: () => particle.remove()
+                        });
+                    }
+                }
+            }
+
+            initButtonEffects() {
+                document.querySelectorAll('.cosmic-button').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        this.createButtonRipple(e, button);
+                    });
+                });
+            }
+
+            createButtonRipple(event, button) {
+                const rect = button.getBoundingClientRect();
+                const ripple = document.createElement('div');
+                
+                ripple.style.position = 'absolute';
+                ripple.style.left = event.clientX - rect.left + 'px';
+                ripple.style.top = event.clientY - rect.top + 'px';
+                ripple.style.width = '0px';
+                ripple.style.height = '0px';
+                ripple.style.background = 'rgba(192, 192, 192, 0.6)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.zIndex = '10';
+
+                button.style.position = 'relative';
+                button.appendChild(ripple);
+
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: ripple,
+                        width: 300,
+                        height: 300,
+                        opacity: [0.6, 0],
+                        duration: 600,
+                        easing: 'easeOutQuart',
+                        complete: () => ripple.remove()
+                    });
+                }
+            }
+
+            initFormEnhancements() {
+                document.querySelectorAll('.cosmic-input').forEach(input => {
+                    input.addEventListener('focus', () => {
+                        this.createInputAura(input);
+                    });
+
+                    input.addEventListener('input', (e) => {
+                        this.createTypingParticles(e.target);
+                    });
+                });
+            }
+
+            createInputAura(input) {
+                const aura = document.createElement('div');
+                aura.className = 'input-aura';
+                aura.style.position = 'absolute';
+                aura.style.top = '0';
+                aura.style.left = '0';
+                aura.style.right = '0';
+                aura.style.bottom = '0';
+                aura.style.border = '2px solid rgba(192, 192, 192, 0.3)';
+                aura.style.borderRadius = 'inherit';
+                aura.style.pointerEvents = 'none';
+                aura.style.zIndex = '-1';
+
+                input.style.position = 'relative';
+                input.parentNode.insertBefore(aura, input);
+
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: aura,
+                        scale: [1, 1.05],
+                        opacity: [0, 1],
+                        duration: 300,
+                        easing: 'easeOutQuart'
+                    });
+                }
+
+                input.addEventListener('blur', () => {
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: aura,
+                            scale: [1.05, 1],
+                            opacity: [1, 0],
+                            duration: 300,
+                            easing: 'easeOutQuart',
+                            complete: () => aura.remove()
+                        });
+                    }
+                }, { once: true });
+            }
+
+            createTypingParticles(input) {
+                const rect = input.getBoundingClientRect();
+                const particle = document.createElement('div');
+                
+                particle.style.position = 'fixed';
+                particle.style.left = rect.right - 20 + 'px';
+                particle.style.top = rect.top + rect.height / 2 + 'px';
+                particle.style.width = '2px';
+                particle.style.height = '2px';
+                particle.style.background = '#4682B4';
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '1000';
+
+                document.body.appendChild(particle);
+
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: particle,
+                        translateX: 20,
+                        translateY: -10 + Math.random() * 20,
+                        opacity: [1, 0],
+                        scale: [1, 0],
+                        duration: 800,
+                        easing: 'easeOutQuart',
+                        complete: () => particle.remove()
+                    });
+                }
+            }
+
+            initKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        document.body.classList.add('keyboard-navigation');
+                    }
+                });
+
+                document.addEventListener('mousedown', () => {
+                    document.body.classList.remove('keyboard-navigation');
+                });
+            }
+
+            initTouchGestures() {
+                let touchStartX = 0;
+                let touchStartY = 0;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                });
+
+                document.addEventListener('touchend', (e) => {
+                    const touchEndX = e.changedTouches[0].clientX;
+                    const touchEndY = e.changedTouches[0].clientY;
+                    
+                    const deltaX = touchEndX - touchStartX;
+                    const deltaY = touchEndY - touchStartY;
+                    
+                    // Swipe gestures for quantum phase changes
+                    if (Math.abs(deltaX) > 50 && Math.abs(deltaY) < 100) {
+                        if (deltaX > 0) {
+                            // Swipe right - next phase
+                            this.triggerPhaseChange('next');
+                        } else {
+                            // Swipe left - previous phase
+                            this.triggerPhaseChange('previous');
+                        }
+                    }
+                });
+            }
+
+            triggerPhaseChange(direction) {
+                const event = new CustomEvent('quantumPhaseSwipe', {
+                    detail: { direction }
+                });
+                document.dispatchEvent(event);
+            }
+        }
+
+        // Performance Optimization
+        class QuantumPerformanceOptimizer {
+            constructor() {
+                this.initIntersectionObserver();
+                this.initPerformanceMonitoring();
+                this.optimizeAnimations();
+            }
+
+            initIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-viewport');
+                        } else {
+                            entry.target.classList.remove('in-viewport');
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '50px'
+                });
+
+                document.querySelectorAll('.cosmic-card, .role, .moon-phase').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            initPerformanceMonitoring() {
+                let frameCount = 0;
+                let lastTime = performance.now();
+
+                const measureFPS = () => {
+                    frameCount++;
+                    const currentTime = performance.now();
+                    
+                    if (currentTime - lastTime >= 1000) {
+                        const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+                        
+                        // Adjust animation quality based on FPS
+                        if (fps < 30) {
+                            document.body.classList.add('low-performance');
+                        } else {
+                            document.body.classList.remove('low-performance');
+                        }
+                        
+                        frameCount = 0;
+                        lastTime = currentTime;
+                    }
+                    
+                    requestAnimationFrame(measureFPS);
+                };
+
+                requestAnimationFrame(measureFPS);
+            }
+
+            optimizeAnimations() {
+                // Reduce animations on low-performance devices
+                const style = document.createElement('style');
+                style.textContent = `
+                    .low-performance * {
+                        animation-duration: 0.1s !important;
+                        transition-duration: 0.1s !important;
+                    }
+                    
+                    .low-performance .shooting-star,
+                    .low-performance .shine-star {
+                        display: none;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Initialize All Systems
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize core systems
+            const cosmicEnhancer = new QuantumCosmicEnhancer();
+            const interactionSystem = new QuantumInteractionSystem();
+            const performanceOptimizer = new QuantumPerformanceOptimizer();
+
+            // Add loading completion effect
+            setTimeout(() => {
+                document.body.classList.add('cosmic-loaded');
+                
+                // Trigger initial quantum burst
+                const event = new CustomEvent('quantumSystemInitialized');
+                document.dispatchEvent(event);
+            }, 1000);
+
+            console.log('🌌 Quantum Cosmic System Initialized');
+            console.log('⚛️ Dual Moon Nexus Active');
+            console.log('✨ Interactive Quantum Field Online');
+        });
+
+        // Service Worker for Progressive Web App
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('🚀 Cosmic Service Worker registered');
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed');
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
