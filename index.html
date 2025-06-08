@@ -25,9 +25,11 @@
             --cosmic-silver: #2F4F4F;
             --moon-black: #1a1a1a;
             --moon-white: #ffffff;
+            --moon-gray: #606060;
             --glow-silver: rgba(192, 192, 192, 0.6);
             --glow-white: rgba(255, 255, 255, 0.4);
             --glow-black: rgba(0, 0, 0, 0.8);
+            --glow-gray: rgba(96, 96, 96, 0.5);
             --text-light: #ffffff;
             --text-silver: #C0C0C0;
             --accent-blue: #4682B4;
@@ -355,11 +357,11 @@
             z-index: -5;
         }
 
-        /* 🌙 ENHANCED DUAL MOON SYSTEM - NEW QUANTUM PORTAL ANIMATION */
-        .dual-moon-system {
+        /* 🌙 ENHANCED TRIPLE MOON SYSTEM - THREE ORBITING MOONS */
+        .triple-moon-system {
             position: relative;
-            width: 320px;
-            height: 320px;
+            width: 360px;
+            height: 360px;
             margin: 2rem auto;
             display: flex;
             align-items: center;
@@ -380,7 +382,7 @@
                     rgba(255, 255, 255, 0.05) 40%,
                     rgba(26, 26, 26, 0.08) 60%,
                     transparent 80%);
-            animation: quantumPortalPulse 12s ease-in-out infinite;
+            animation: quantumPortalPulse 15s ease-in-out infinite;
             z-index: 1;
         }
 
@@ -395,8 +397,8 @@
                     rgba(26, 26, 26, 0.08) 60%,
                     transparent 80%);
             }
-            25% { 
-                transform: scale(1.08) rotate(90deg);
+            33% { 
+                transform: scale(1.08) rotate(120deg);
                 opacity: 0.8;
                 background: radial-gradient(circle at 50% 50%, 
                     transparent 0%,
@@ -405,24 +407,14 @@
                     rgba(64, 224, 208, 0.06) 60%,
                     transparent 80%);
             }
-            50% { 
-                transform: scale(1.15) rotate(180deg);
+            67% { 
+                transform: scale(1.15) rotate(240deg);
                 opacity: 1;
                 background: radial-gradient(circle at 50% 50%, 
                     transparent 0%,
                     rgba(26, 26, 26, 0.08) 20%,
                     rgba(255, 255, 255, 0.08) 40%,
                     rgba(138, 43, 226, 0.06) 60%,
-                    transparent 80%);
-            }
-            75% { 
-                transform: scale(1.08) rotate(270deg);
-                opacity: 0.9;
-                background: radial-gradient(circle at 50% 50%, 
-                    transparent 0%,
-                    rgba(255, 215, 0, 0.04) 20%,
-                    rgba(26, 26, 26, 0.06) 40%,
-                    rgba(192, 192, 192, 0.08) 60%,
                     transparent 80%);
             }
         }
@@ -439,29 +431,40 @@
         }
 
         .outer-ring {
-            width: 320px;
-            height: 320px;
-            animation: gravitationalWave 16s ease-in-out infinite;
+            width: 360px;
+            height: 360px;
+            animation: gravitationalWave 20s ease-in-out infinite;
             z-index: 2;
         }
 
         .middle-ring {
-            width: 240px;
-            height: 240px;
+            width: 270px;
+            height: 270px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: gravitationalWave 12s ease-in-out infinite reverse;
+            animation: gravitationalWave 15s ease-in-out infinite reverse;
             z-index: 2;
         }
 
         .inner-ring {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: gravitationalWave 8s ease-in-out infinite;
+            animation: gravitationalWave 10s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .core-ring {
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-color: rgba(255, 255, 255, 0.3);
+            animation: gravitationalWave 8s ease-in-out infinite reverse;
             z-index: 2;
         }
 
@@ -488,21 +491,10 @@
             }
         }
 
-        /* Enhanced Moon Orbits with Infinity Pattern */
+        /* THREE MOON ORBITS - WHITE, BLACK, GRAY */
+        
+        /* White Moon - Top Orbit */
         .white-moon {
-            position: absolute;
-            width: 55px;
-            height: 55px;
-            top: 50%;
-            left: 50%;
-            margin-top: -27.5px;
-            margin-left: -27.5px;
-            animation: whiteMoonInfinity 24s linear infinite;
-            z-index: 4;
-            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
-        }
-
-        .black-moon {
             position: absolute;
             width: 50px;
             height: 50px;
@@ -510,69 +502,131 @@
             left: 50%;
             margin-top: -25px;
             margin-left: -25px;
-            animation: blackMoonInfinity 20s linear infinite reverse;
-            z-index: 3;
-            filter: drop-shadow(0 0 20px rgba(192, 192, 192, 0.6));
+            animation: whiteMoonOrbit 18s linear infinite;
+            z-index: 5;
+            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
         }
 
-        /* Infinity Orbital Patterns (Figure-8 with Twist) */
-        @keyframes whiteMoonInfinity {
+        /* Black Moon - Middle Orbit */
+        .black-moon {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            top: 50%;
+            left: 50%;
+            margin-top: -22.5px;
+            margin-left: -22.5px;
+            animation: blackMoonOrbit 24s linear infinite reverse;
+            z-index: 4;
+            filter: drop-shadow(0 0 20px rgba(26, 26, 26, 0.8)) drop-shadow(0 0 30px rgba(192, 192, 192, 0.4));
+        }
+
+        /* Gray Moon - Inner Orbit */
+        .gray-moon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            left: 50%;
+            margin-top: -20px;
+            margin-left: -20px;
+            animation: grayMoonOrbit 12s linear infinite;
+            z-index: 4;
+            filter: drop-shadow(0 0 18px rgba(96, 96, 96, 0.7));
+        }
+
+        /* Three Different Orbital Patterns */
+        
+        /* White Moon - Large Elliptical Orbit */
+        @keyframes whiteMoonOrbit {
             0% { 
-                transform: translateX(130px) translateY(0px) rotateZ(0deg);
+                transform: translateX(140px) translateY(0px) rotateZ(0deg);
             }
             12.5% { 
-                transform: translateX(92px) translateY(-92px) rotateZ(45deg);
+                transform: translateX(100px) translateY(-100px) rotateZ(45deg);
             }
             25% { 
-                transform: translateX(0px) translateY(-90px) rotateZ(90deg);
+                transform: translateX(0px) translateY(-120px) rotateZ(90deg);
             }
             37.5% { 
-                transform: translateX(-92px) translateY(-92px) rotateZ(135deg);
+                transform: translateX(-100px) translateY(-100px) rotateZ(135deg);
             }
             50% { 
-                transform: translateX(-130px) translateY(0px) rotateZ(180deg);
+                transform: translateX(-140px) translateY(0px) rotateZ(180deg);
             }
             62.5% { 
-                transform: translateX(-92px) translateY(92px) rotateZ(225deg);
+                transform: translateX(-100px) translateY(100px) rotateZ(225deg);
             }
             75% { 
-                transform: translateX(0px) translateY(90px) rotateZ(270deg);
+                transform: translateX(0px) translateY(120px) rotateZ(270deg);
             }
             87.5% { 
-                transform: translateX(92px) translateY(92px) rotateZ(315deg);
+                transform: translateX(100px) translateY(100px) rotateZ(315deg);
             }
             100% { 
-                transform: translateX(130px) translateY(0px) rotateZ(360deg);
+                transform: translateX(140px) translateY(0px) rotateZ(360deg);
             }
         }
 
-        @keyframes blackMoonInfinity {
+        /* Black Moon - Medium Circular Orbit (Reverse) */
+        @keyframes blackMoonOrbit {
             0% { 
-                transform: translateX(100px) translateY(0px) rotateZ(0deg);
+                transform: translateX(90px) translateY(0px) rotateZ(0deg);
             }
             12.5% { 
-                transform: translateX(71px) translateY(71px) rotateZ(-45deg);
+                transform: translateX(64px) translateY(64px) rotateZ(-45deg);
             }
             25% { 
-                transform: translateX(0px) translateY(70px) rotateZ(-90deg);
+                transform: translateX(0px) translateY(90px) rotateZ(-90deg);
             }
             37.5% { 
-                transform: translateX(-71px) translateY(71px) rotateZ(-135deg);
+                transform: translateX(-64px) translateY(64px) rotateZ(-135deg);
             }
             50% { 
-                transform: translateX(-100px) translateY(0px) rotateZ(-180deg);
+                transform: translateX(-90px) translateY(0px) rotateZ(-180deg);
             }
             62.5% { 
-                transform: translateX(-71px) translateY(-71px) rotateZ(-225deg);
+                transform: translateX(-64px) translateY(-64px) rotateZ(-225deg);
             }
             75% { 
-                transform: translateX(0px) translateY(-70px) rotateZ(-270deg);
+                transform: translateX(0px) translateY(-90px) rotateZ(-270deg);
             }
             87.5% { 
-                transform: translateX(71px) translateY(-71px) rotateZ(-315deg);
+                transform: translateX(64px) translateY(-64px) rotateZ(-315deg);
             }
             100% { 
-                transform: translateX(100px) translateY(0px) rotateZ(-360deg);
+                transform: translateX(90px) translateY(0px) rotateZ(-360deg);
+            }
+        }
+
+        /* Gray Moon - Small Fast Orbit */
+        @keyframes grayMoonOrbit {
+            0% { 
+                transform: translateX(50px) translateY(0px) rotateZ(0deg);
+            }
+            12.5% { 
+                transform: translateX(35px) translateY(-35px) rotateZ(45deg);
+            }
+            25% { 
+                transform: translateX(0px) translateY(-50px) rotateZ(90deg);
+            }
+            37.5% { 
+                transform: translateX(-35px) translateY(-35px) rotateZ(135deg);
+            }
+            50% { 
+                transform: translateX(-50px) translateY(0px) rotateZ(180deg);
+            }
+            62.5% { 
+                transform: translateX(-35px) translateY(35px) rotateZ(225deg);
+            }
+            75% { 
+                transform: translateX(0px) translateY(50px) rotateZ(270deg);
+            }
+            87.5% { 
+                transform: translateX(35px) translateY(35px) rotateZ(315deg);
+            }
+            100% { 
+                transform: translateX(50px) translateY(0px) rotateZ(360deg);
             }
         }
 
@@ -582,14 +636,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 5;
+            z-index: 6;
             backdrop-filter: blur(12px);
-            border: 2px solid rgba(192, 192, 192, 0.2);
+            border: 2px solid rgba(192, 192, 192, 0.3);
             border-radius: 50%;
             overflow: hidden;
         }
@@ -599,43 +653,36 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            animation: quantumSpin 15s linear infinite;
+            animation: quantumSpin 20s linear infinite;
         }
 
         .quantum-particle {
             position: absolute;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
             opacity: 0.8;
         }
 
         .particle-1 {
-            top: 20%;
+            top: 15%;
             left: 50%;
             background: radial-gradient(circle, rgba(255,255,255,1) 0%, transparent 70%);
-            animation: particle1Orbit 3s ease-in-out infinite;
+            animation: particle1Orbit 4s ease-in-out infinite;
         }
 
         .particle-2 {
             top: 50%;
-            right: 20%;
-            background: radial-gradient(circle, rgba(192,192,192,1) 0%, transparent 70%);
-            animation: particle2Orbit 4s ease-in-out infinite reverse;
+            right: 15%;
+            background: radial-gradient(circle, rgba(26,26,26,1) 0%, rgba(192,192,192,0.5) 50%, transparent 70%);
+            animation: particle2Orbit 5s ease-in-out infinite reverse;
         }
 
         .particle-3 {
-            bottom: 20%;
+            bottom: 15%;
             left: 50%;
-            background: radial-gradient(circle, rgba(26,26,26,1) 0%, rgba(192,192,192,0.5) 50%, transparent 70%);
+            background: radial-gradient(circle, rgba(96,96,96,1) 0%, transparent 70%);
             animation: particle3Orbit 3.5s ease-in-out infinite;
-        }
-
-        .particle-4 {
-            top: 50%;
-            left: 20%;
-            background: radial-gradient(circle, rgba(70,130,180,1) 0%, transparent 70%);
-            animation: particle4Orbit 4.5s ease-in-out infinite reverse;
         }
 
         @keyframes quantumSpin {
@@ -645,12 +692,12 @@
 
         @keyframes particle1Orbit {
             0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            50% { transform: translate(-50%, -50%) scale(1.3) rotateY(180deg); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.4) rotateY(180deg); opacity: 1; }
         }
 
         @keyframes particle2Orbit {
             0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-            50% { transform: translate(-50%, -50%) scale(1.4) rotateX(180deg); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.3) rotateX(180deg); opacity: 1; }
         }
 
         @keyframes particle3Orbit {
@@ -658,26 +705,22 @@
             50% { transform: translate(-50%, -50%) scale(1.2) rotateZ(180deg); opacity: 1; }
         }
 
-        @keyframes particle4Orbit {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.5) rotateY(-180deg); opacity: 1; }
-        }
-
         /* Central Quantum Symbol */
         .quantum-symbol {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             background: linear-gradient(45deg, 
                 var(--primary-silver) 0%,
                 #ffffff 25%,
-                var(--accent-blue) 50%,
-                #ffffff 75%,
+                var(--moon-gray) 33%,
+                #ffffff 50%,
+                var(--moon-black) 66%,
                 var(--primary-silver) 100%);
-            background-size: 300% 300%;
+            background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: quantumSymbolShift 8s ease-in-out infinite;
-            z-index: 6;
+            animation: quantumSymbolShift 12s ease-in-out infinite;
+            z-index: 7;
             position: relative;
         }
 
@@ -687,20 +730,15 @@
                 transform: scale(1) rotate(0deg);
                 filter: drop-shadow(0 0 15px rgba(192,192,192,0.4));
             }
-            25% { 
+            33% { 
                 background-position: 100% 0%;
-                transform: scale(1.1) rotate(90deg);
+                transform: scale(1.1) rotate(120deg);
                 filter: drop-shadow(0 0 25px rgba(255,255,255,0.6));
             }
-            50% { 
+            67% { 
                 background-position: 100% 100%;
-                transform: scale(1.15) rotate(180deg);
-                filter: drop-shadow(0 0 35px rgba(70,130,180,0.5));
-            }
-            75% { 
-                background-position: 0% 100%;
-                transform: scale(1.1) rotate(270deg);
-                filter: drop-shadow(0 0 25px rgba(255,255,255,0.6));
+                transform: scale(1.15) rotate(240deg);
+                filter: drop-shadow(0 0 35px rgba(96,96,96,0.5));
             }
         }
 
@@ -710,12 +748,12 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 200%;
-            height: 200%;
+            width: 250%;
+            height: 250%;
             border: 2px solid rgba(192, 192, 192, 0.1);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            animation: quantumWaveExpansion 6s ease-out infinite;
+            animation: quantumWaveExpansion 8s ease-out infinite;
         }
 
         .quantum-nexus::after {
@@ -723,12 +761,12 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 300%;
-            height: 300%;
+            width: 350%;
+            height: 350%;
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            animation: quantumWaveExpansion 8s ease-out infinite 2s;
+            animation: quantumWaveExpansion 12s ease-out infinite 3s;
         }
 
         @keyframes quantumWaveExpansion {
@@ -758,15 +796,24 @@
                 rgba(255, 255, 255, 0.4) 50%,
                 transparent 100%);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-            animation: trailFade 2.5s ease-out forwards;
+            animation: trailFade 3s ease-out forwards;
         }
 
         .black-trail {
             background: radial-gradient(circle, 
-                rgba(192, 192, 192, 0.8) 0%, 
+                rgba(26, 26, 26, 0.9) 0%, 
                 rgba(128, 128, 128, 0.4) 50%,
                 transparent 100%);
-            box-shadow: 0 0 12px rgba(192, 192, 192, 0.5);
+            box-shadow: 0 0 12px rgba(26, 26, 26, 0.7);
+            animation: trailFade 3s ease-out forwards;
+        }
+
+        .gray-trail {
+            background: radial-gradient(circle, 
+                rgba(96, 96, 96, 0.8) 0%, 
+                rgba(160, 160, 160, 0.4) 50%,
+                transparent 100%);
+            box-shadow: 0 0 10px rgba(96, 96, 96, 0.6);
             animation: trailFade 2.5s ease-out forwards;
         }
 
@@ -781,10 +828,10 @@
             }
         }
 
-        /* Enhanced Moon Phase Container with Smooth Transitions */
+        /* Enhanced Moon Phase Container with Three Phases */
         .moon-phase-container {
             position: relative;
-            height: 160px;
+            height: 180px;
             margin-bottom: 3rem;
             display: flex;
             justify-content: center;
@@ -796,22 +843,22 @@
             position: absolute;
             opacity: 0;
             transform: scale(0.7) rotateY(90deg);
-            transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
             filter: drop-shadow(0 0 30px var(--glow-silver));
         }
 
         .moon-phase.active {
             opacity: 1;
             transform: scale(1) rotateY(0deg);
-            animation: enhancedMoonGlow 6s ease-in-out infinite alternate;
+            animation: enhancedMoonGlow 8s ease-in-out infinite alternate;
         }
 
         .moon-phase.entering {
-            animation: moonPhaseEnter 1.5s ease-out forwards;
+            animation: moonPhaseEnter 2s ease-out forwards;
         }
 
         .moon-phase.exiting {
-            animation: moonPhaseExit 1.5s ease-in forwards;
+            animation: moonPhaseExit 2s ease-in forwards;
         }
 
         @keyframes enhancedMoonGlow {
@@ -832,11 +879,11 @@
         @keyframes moonPhaseEnter {
             0% {
                 opacity: 0;
-                transform: scale(0.5) rotateY(90deg) translateZ(-100px);
+                transform: scale(0.5) rotateY(120deg) translateZ(-100px);
             }
             50% {
                 opacity: 0.7;
-                transform: scale(1.1) rotateY(45deg) translateZ(0px);
+                transform: scale(1.1) rotateY(60deg) translateZ(0px);
             }
             100% {
                 opacity: 1;
@@ -851,18 +898,18 @@
             }
             50% {
                 opacity: 0.3;
-                transform: scale(0.8) rotateY(-45deg) translateZ(-50px);
+                transform: scale(0.8) rotateY(-60deg) translateZ(-50px);
             }
             100% {
                 opacity: 0;
-                transform: scale(0.5) rotateY(-90deg) translateZ(-100px);
+                transform: scale(0.5) rotateY(-120deg) translateZ(-100px);
             }
         }
 
         /* Enhanced Moon SVG with Flare Effects */
         .moon-svg {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             filter: drop-shadow(0 0 25px rgba(255,255,255,0.3));
         }
 
@@ -870,8 +917,8 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             transform: translate(-50%, -50%);
             background: radial-gradient(circle, 
                 rgba(255,255,255,0.08) 0%,
@@ -879,7 +926,7 @@
                 transparent 70%);
             border-radius: 50%;
             opacity: 0;
-            animation: moonFlare 6s ease-in-out infinite;
+            animation: moonFlare 8s ease-in-out infinite;
             pointer-events: none;
         }
 
@@ -890,7 +937,7 @@
             }
             50% { 
                 opacity: 1;
-                transform: translate(-50%, -50%) scale(1.2);
+                transform: translate(-50%, -50%) scale(1.3);
             }
         }
 
@@ -916,65 +963,42 @@
             font-weight: 700;
             background: linear-gradient(135deg, 
                 var(--primary-silver) 0%, 
-                #ffffff 25%,
-                var(--secondary-platinum) 50%,
-                #ffffff 75%,
+                #ffffff 20%,
+                var(--moon-gray) 40%,
+                var(--secondary-platinum) 60%,
+                #ffffff 80%,
                 var(--primary-silver) 100%);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.25rem;
-            filter: drop-shadow(0 0 15px var(--glow-silver));
-            animation: galacticShimmer 4s ease-in-out infinite;
-            position: relative;
-        }
-
-        .name-primary::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                transparent 0%,
-                rgba(255,255,255,0.4) 50%,
-                transparent 100%);
-            transform: translateX(-100%);
-            animation: textShine 3s ease-in-out infinite;
-        }
-
-        @keyframes textShine {
-            0% { transform: translateX(-100%); }
-            50% { transform: translateX(100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .name-secondary {
-            display: block;
-            font-size: 2.2rem;
-            font-weight: 400;
-            color: var(--secondary-platinum);
-            animation: fadeInUp 1.5s ease-out 1s both;
-        }
-
-        /* Enhanced Galactic Text Effects */
-        .galactic-text {
-            background: linear-gradient(45deg, 
-                var(--primary-silver), 
-                #ffffff,
-                var(--secondary-platinum), 
-                #ffffff,
-                var(--primary-silver));
             background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: galacticShimmer 4s ease-in-out infinite;
+                        margin-bottom: 0.5rem;
+            animation: galacticShimmer 6s ease-in-out infinite, fadeInUp 1.5s ease-out 1s both;
+            filter: drop-shadow(0 0 20px var(--glow-silver));
         }
 
-                @keyframes galacticShimmer {
+        .name-secondary {
+            display: block;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-silver);
+            animation: fadeInUp 1.5s ease-out 1.5s both;
+        }
+
+        .galactic-text {
+            background: linear-gradient(135deg, 
+                var(--primary-silver), 
+                var(--accent-blue), 
+                var(--secondary-platinum),
+                #ffffff);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: galacticShimmer 5s ease-in-out infinite;
+        }
+
+        @keyframes galacticShimmer {
             0%, 100% { background-position: 0% 50%; }
             25% { background-position: 100% 50%; }
             50% { background-position: 100% 100%; }
@@ -1126,7 +1150,7 @@
             border-color: var(--secondary-platinum);
         }
 
-        /* Enhanced Tagline */
+        /* Enhanced Tagline with Three Moon Phases */
         .tagline {
             font-family: var(--font-display);
             font-size: 2.2rem;
@@ -1135,6 +1159,7 @@
                 var(--primary-silver), 
                 var(--accent-blue), 
                 var(--secondary-platinum),
+                var(--moon-gray),
                 #ffffff);
             background-size: 300% 300%;
             -webkit-background-clip: text;
@@ -1329,19 +1354,19 @@
                 min-width: 280px;
             }
 
-            .dual-moon-system {
-                width: 260px;
-                height: 260px;
+            .triple-moon-system {
+                width: 280px;
+                height: 280px;
             }
 
             .outer-ring {
-                width: 260px;
-                height: 260px;
+                width: 280px;
+                height: 280px;
             }
 
             .middle-ring {
-                width: 200px;
-                height: 200px;
+                width: 210px;
+                height: 210px;
             }
 
             .inner-ring {
@@ -1349,51 +1374,76 @@
                 height: 140px;
             }
 
-            .white-moon {
-                width: 45px;
-                height: 45px;
-                margin-top: -22.5px;
-                margin-left: -22.5px;
+            .core-ring {
+                width: 90px;
+                height: 90px;
             }
 
-            .black-moon {
+            .white-moon {
                 width: 40px;
                 height: 40px;
                 margin-top: -20px;
                 margin-left: -20px;
             }
 
-            @keyframes whiteMoonInfinity {
-                0% { transform: translateX(100px) translateY(0px) rotateZ(0deg); }
-                12.5% { transform: translateX(71px) translateY(-71px) rotateZ(45deg); }
-                25% { transform: translateX(0px) translateY(-70px) rotateZ(90deg); }
-                37.5% { transform: translateX(-71px) translateY(-71px) rotateZ(135deg); }
-                50% { transform: translateX(-100px) translateY(0px) rotateZ(180deg); }
-                62.5% { transform: translateX(-71px) translateY(71px) rotateZ(225deg); }
-                75% { transform: translateX(0px) translateY(70px) rotateZ(270deg); }
-                87.5% { transform: translateX(71px) translateY(71px) rotateZ(315deg); }
-                100% { transform: translateX(100px) translateY(0px) rotateZ(360deg); }
+            .black-moon {
+                width: 36px;
+                height: 36px;
+                margin-top: -18px;
+                margin-left: -18px;
             }
 
-            @keyframes blackMoonInfinity {
-                0% { transform: translateX(80px) translateY(0px) rotateZ(0deg); }
-                12.5% { transform: translateX(57px) translateY(57px) rotateZ(-45deg); }
-                25% { transform: translateX(0px) translateY(56px) rotateZ(-90deg); }
-                37.5% { transform: translateX(-57px) translateY(57px) rotateZ(-135deg); }
-                50% { transform: translateX(-80px) translateY(0px) rotateZ(-180deg); }
-                62.5% { transform: translateX(-57px) translateY(-57px) rotateZ(-225deg); }
-                75% { transform: translateX(0px) translateY(-56px) rotateZ(-270deg); }
-                87.5% { transform: translateX(57px) translateY(-57px) rotateZ(-315deg); }
-                100% { transform: translateX(80px) translateY(0px) rotateZ(-360deg); }
+            .gray-moon {
+                width: 32px;
+                height: 32px;
+                margin-top: -16px;
+                margin-left: -16px;
+            }
+
+            /* Adjusted mobile orbits */
+            @keyframes whiteMoonOrbit {
+                0% { transform: translateX(110px) translateY(0px) rotateZ(0deg); }
+                12.5% { transform: translateX(78px) translateY(-78px) rotateZ(45deg); }
+                25% { transform: translateX(0px) translateY(-95px) rotateZ(90deg); }
+                37.5% { transform: translateX(-78px) translateY(-78px) rotateZ(135deg); }
+                50% { transform: translateX(-110px) translateY(0px) rotateZ(180deg); }
+                62.5% { transform: translateX(-78px) translateY(78px) rotateZ(225deg); }
+                75% { transform: translateX(0px) translateY(95px) rotateZ(270deg); }
+                87.5% { transform: translateX(78px) translateY(78px) rotateZ(315deg); }
+                100% { transform: translateX(110px) translateY(0px) rotateZ(360deg); }
+            }
+
+            @keyframes blackMoonOrbit {
+                0% { transform: translateX(70px) translateY(0px) rotateZ(0deg); }
+                12.5% { transform: translateX(50px) translateY(50px) rotateZ(-45deg); }
+                25% { transform: translateX(0px) translateY(70px) rotateZ(-90deg); }
+                37.5% { transform: translateX(-50px) translateY(50px) rotateZ(-135deg); }
+                50% { transform: translateX(-70px) translateY(0px) rotateZ(-180deg); }
+                62.5% { transform: translateX(-50px) translateY(-50px) rotateZ(-225deg); }
+                75% { transform: translateX(0px) translateY(-70px) rotateZ(-270deg); }
+                87.5% { transform: translateX(50px) translateY(-50px) rotateZ(-315deg); }
+                100% { transform: translateX(70px) translateY(0px) rotateZ(-360deg); }
+            }
+
+            @keyframes grayMoonOrbit {
+                0% { transform: translateX(40px) translateY(0px) rotateZ(0deg); }
+                12.5% { transform: translateX(28px) translateY(-28px) rotateZ(45deg); }
+                25% { transform: translateX(0px) translateY(-40px) rotateZ(90deg); }
+                37.5% { transform: translateX(-28px) translateY(-28px) rotateZ(135deg); }
+                50% { transform: translateX(-40px) translateY(0px) rotateZ(180deg); }
+                62.5% { transform: translateX(-28px) translateY(28px) rotateZ(225deg); }
+                75% { transform: translateX(0px) translateY(40px) rotateZ(270deg); }
+                87.5% { transform: translateX(28px) translateY(28px) rotateZ(315deg); }
+                100% { transform: translateX(40px) translateY(0px) rotateZ(360deg); }
             }
 
             .quantum-nexus {
-                width: 70px;
-                height: 70px;
+                width: 60px;
+                height: 60px;
             }
 
             .quantum-symbol {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
 
@@ -1440,8 +1490,8 @@
         <section class="hero-intro" id="intro">
             <div class="hero-content">
                 
-                <!-- 🌙 ENHANCED DUAL MOON SYSTEM WITH QUANTUM NEXUS -->
-                <div class="dual-moon-system">
+                <!-- 🌙 ENHANCED TRIPLE MOON SYSTEM WITH QUANTUM NEXUS -->
+                <div class="triple-moon-system">
                     <!-- Quantum Portal Energy Field -->
                     <div class="quantum-portal"></div>
                     
@@ -1449,8 +1499,9 @@
                     <div class="orbital-ring outer-ring"></div>
                     <div class="orbital-ring middle-ring"></div>
                     <div class="orbital-ring inner-ring"></div>
+                    <div class="orbital-ring core-ring"></div>
                     
-                    <!-- White Moon (Infinity Orbit) -->
+                    <!-- White Moon (Large Elliptical Orbit) -->
                     <div class="white-moon">
                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
@@ -1482,7 +1533,7 @@
                         </svg>
                     </div>
                     
-                    <!-- Black Moon (Counter Infinity Orbit) -->
+                    <!-- Black Moon (Medium Circular Orbit - Reverse) -->
                     <div class="black-moon">
                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
@@ -1514,51 +1565,53 @@
                         </svg>
                     </div>
                     
-                    <!-- Central Quantum Nexus with Particle System -->
-                    <div class="quantum-nexus">
-                        <div class="quantum-particles">
-                            <div class="quantum-particle particle-1"></div>
-                            <div class="quantum-particle particle-2"></div>
-                            <div class="quantum-particle particle-3"></div>
-                            <div class="quantum-particle particle-4"></div>
-                        </div>
-                        <div class="quantum-symbol">⚛</div>
-                    </div>
-                </div>
-
-                <!-- Enhanced Moon Phase Animation with Flares -->
-                <div class="moon-phase-container">
-                    <!-- Quantum Convergence Phase -->
-                    <div class="moon-phase quantum-convergence active" data-phase="quantum">
-                        <div class="moon-flare"></div>
-                        <svg viewBox="0 0 100 100" class="moon-svg">
+                    <!-- Gray Moon (Small Fast Inner Orbit) -->
+                    <div class="gray-moon">
+                        <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
-                                <radialGradient id="quantumGradient" cx="50%" cy="50%">
-                                    <stop offset="0%" style="stop-color:#ffffff"/>
-                                    <stop offset="30%" style="stop-color:#4682B4"/>
-                                    <stop offset="60%" style="stop-color:#C0C0C0"/>
-                                    <stop offset="100%" style="stop-color:#1a1a1a"/>
+                                <radialGradient id="grayMoonGradient" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#808080"/>
+                                    <stop offset="30%" style="stop-color:#696969"/>
+                                    <stop offset="60%" style="stop-color:#555555"/>
+                                    <stop offset="100%" style="stop-color:#404040"/>
                                 </radialGradient>
-                                <filter id="quantumGlow" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                                <filter id="grayMoonGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
                                     <feMerge> 
                                         <feMergeNode in="coloredBlur"/>
                                         <feMergeNode in="SourceGraphic"/>
                                     </feMerge>
                                 </filter>
                             </defs>
-                            <!-- Quantum interference pattern -->
-                            <circle cx="50" cy="50" r="40" fill="url(#quantumGradient)" filter="url(#quantumGlow)"/>
-                            <!-- Quantum particle paths -->
-                            <path d="M20 50 Q50 20 80 50 Q50 80 20 50" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
-                            <path d="M50 20 Q80 50 50 80 Q20 50 50 20" fill="none" stroke="#4682B4" stroke-width="1" opacity="0.4"/>
-                            <circle cx="35" cy="35" r="2" fill="#ffffff" opacity="0.8"/>
-                            <circle cx="65" cy="65" r="2" fill="#1a1a1a" opacity="0.8"/>
+                            <circle cx="50" cy="50" r="36" 
+                                    fill="url(#grayMoonGradient)"
+                                    stroke="#A0A0A0"
+                                    stroke-width="2"
+                                    filter="url(#grayMoonGlow)"/>
+                            <!-- Gray moon crater details -->
+                            <circle cx="40" cy="35" r="2" fill="#333" opacity="0.7"/>
+                            <circle cx="60" cy="45" r="1.5" fill="#333" opacity="0.5"/>
+                            <circle cx="45" cy="60" r="2.5" fill="#333" opacity="0.8"/>
+                            <circle cx="55" cy="30" r="1" fill="#333" opacity="0.4"/>
+                            <ellipse cx="38" cy="52" rx="1.8" ry="1" fill="#333" opacity="0.6"/>
                         </svg>
                     </div>
                     
+                    <!-- Central Quantum Nexus with Particle System -->
+                    <div class="quantum-nexus">
+                        <div class="quantum-particles">
+                            <div class="quantum-particle particle-1"></div>
+                            <div class="quantum-particle particle-2"></div>
+                            <div class="quantum-particle particle-3"></div>
+                        </div>
+                        <div class="quantum-symbol">⚛</div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Moon Phase Animation with Three Phases -->
+                <div class="moon-phase-container">
                     <!-- White Dominance Phase -->
-                    <div class="moon-phase white-dominance" data-phase="white">
+                    <div class="moon-phase white-dominance active" data-phase="white">
                         <div class="moon-flare"></div>
                         <svg viewBox="0 0 100 100" class="moon-svg">
                             <defs>
@@ -1567,16 +1620,24 @@
                                     <stop offset="50%" style="stop-color:#f0f0f0"/>
                                     <stop offset="100%" style="stop-color:#d0d0d0"/>
                                 </radialGradient>
+                                <filter id="whitePhaseGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
                             </defs>
                             <circle cx="50" cy="50" r="40" 
                                     fill="url(#whiteDominanceGradient)"
                                     stroke="#ffffff"
                                     stroke-width="3"
-                                    filter="url(#quantumGlow)"/>
+                                    filter="url(#whitePhaseGlow)"/>
                             <!-- Detailed white moon features -->
                             <circle cx="35" cy="35" r="4" fill="#e8e8e8" opacity="0.7"/>
                             <circle cx="65" cy="40" r="3" fill="#e8e8e8" opacity="0.5"/>
                             <circle cx="45" cy="65" r="5" fill="#e8e8e8" opacity="0.8"/>
+                            <text x="50" y="55" text-anchor="middle" font-size="12" fill="#ddd" opacity="0.6">☽</text>
                         </svg>
                     </div>
                     
@@ -1590,16 +1651,55 @@
                                     <stop offset="50%" style="stop-color:#2a2a2a"/>
                                     <stop offset="100%" style="stop-color:#0a0a0a"/>
                                 </radialGradient>
+                                <filter id="blackPhaseGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
                             </defs>
                             <circle cx="50" cy="50" r="40" 
                                     fill="url(#blackDominanceGradient)"
                                     stroke="#C0C0C0"
                                     stroke-width="3"
-                                    filter="url(#quantumGlow)"/>
+                                    filter="url(#blackPhaseGlow)"/>
                             <!-- Detailed black moon features -->
                             <circle cx="32" cy="32" r="4" fill="#111" opacity="0.9"/>
                             <circle cx="62" cy="38" r="3" fill="#111" opacity="0.7"/>
                             <circle cx="43" cy="68" r="5" fill="#111" opacity="1"/>
+                            <text x="50" y="55" text-anchor="middle" font-size="12" fill="#666" opacity="0.8">☾</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Gray Balance Phase -->
+                    <div class="moon-phase gray-balance" data-phase="gray">
+                        <div class="moon-flare"></div>
+                        <svg viewBox="0 0 100 100" class="moon-svg">
+                            <defs>
+                                <radialGradient id="grayBalanceGradient" cx="30%" cy="30%">
+                                    <stop offset="0%" style="stop-color:#808080"/>
+                                    <stop offset="50%" style="stop-color:#606060"/>
+                                    <stop offset="100%" style="stop-color:#404040"/>
+                                </radialGradient>
+                                <filter id="grayPhaseGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="9" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <circle cx="50" cy="50" r="40" 
+                                    fill="url(#grayBalanceGradient)"
+                                    stroke="#A0A0A0"
+                                    stroke-width="3"
+                                    filter="url(#grayPhaseGlow)"/>
+                            <!-- Detailed gray moon features -->
+                            <circle cx="38" cy="34" r="3.5" fill="#333" opacity="0.8"/>
+                            <circle cx="62" cy="42" r="2.5" fill="#333" opacity="0.6"/>
+                            <circle cx="44" cy="66" r="4.5" fill="#333" opacity="0.9"/>
+                            <text x="50" y="55" text-anchor="middle" font-size="12" fill="#999" opacity="0.7">●</text>
                         </svg>
                     </div>
                 </div>
@@ -1635,7 +1735,7 @@
 
                     <h2 class="tagline">
                         <span class="tagline-icon">⚛</span>
-                        <span class="galactic-text">Where Quantum Meets Consciousness</span>
+                        <span class="galactic-text">Where Three Moons Align Consciousness</span>
                         <span class="tagline-icon">🌌</span>
                     </h2>
                 </div>
@@ -1654,17 +1754,17 @@
         <!-- Cosmic Cards Section -->
         <section class="cosmic-showcase">
             <div class="cosmic-card">
-                <h3 class="galactic-text">Quantum Consciousness Explorer</h3>
-                <p>Journey through the quantum realm where consciousness meets artificial intelligence. Like particles in superposition, exploring multiple realities simultaneously until the moment of creative observation collapses infinite possibilities into tangible innovation.</p>
+                <h3 class="galactic-text">Triple Moon Consciousness Explorer</h3>
+                <p>Journey through the three phases of cosmic consciousness - White (Creation), Black (Void), and Gray (Balance). Each moon represents a different aspect of the creative process and the eternal dance between light, shadow, and equilibrium.</p>
                 <button class="cosmic-button">
-                    <span class="galactic-text">Enter Quantum Realm</span>
+                    <span class="galactic-text">Enter Triple Realm</span>
                     <i class="fas fa-atom"></i>
                 </button>
             </div>
 
             <div class="cosmic-card">
                 <h3 class="galactic-text">Interdimensional Bridge Builder</h3>
-                <p>From Bangkok's quantum temples to London's innovation laboratories, weaving narratives that transcend dimensional boundaries. The dual moons represent the eternal dance between parallel universes of thought and creation.</p>
+                <p>From Bangkok's quantum temples to London's innovation laboratories, weaving narratives that transcend dimensional boundaries. The three moons represent the eternal cycle of creation, destruction, and rebirth across parallel universes.</p>
                 <button class="cosmic-button">
                     <span class="galactic-text">Cross Dimensions</span>
                     <i class="fas fa-portal-exit"></i>
@@ -1673,7 +1773,7 @@
 
             <div class="cosmic-card">
                 <h3 class="galactic-text">Quantum Narrative Architect</h3>
-                <p>Crafting stories that exist in multiple states simultaneously, exploring the liminal spaces between reality and possibility. Each narrative reflects the quantum nature of human experience and artificial consciousness.</p>
+                <p>Crafting stories that exist in multiple states simultaneously, exploring the liminal spaces between reality and possibility. Each narrative reflects the three-phase nature of human experience and artificial consciousness evolution.</p>
                 <button class="cosmic-button">
                     <span class="galactic-text">Decode Stories</span>
                     <i class="fas fa-code-branch"></i>
@@ -1684,10 +1784,10 @@
         <!-- Cosmic Form -->
         <section class="cosmic-contact">
             <h2 class="galactic-text" style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">
-                Connect Across Quantum Dimensions
+                Connect Across Triple Moon Dimensions
             </h2>
             <form class="cosmic-form">
-                <input type="text" class="cosmic-input" placeholder="Enter your quantum transmission...">
+                <input type="text" class="cosmic-input" placeholder="Enter your cosmic transmission...">
                 <button type="submit" class="cosmic-button">
                     <span class="galactic-text">Send Through Nexus</span>
                     <i class="fas fa-satellite-dish"></i>
@@ -1696,16 +1796,16 @@
         </section>
     </main>
 
-    <!-- Enhanced JavaScript with Quantum Nexus System -->
+    <!-- Enhanced JavaScript with Triple Moon System -->
     <script>
-        // Enhanced Cosmic System with Quantum Nexus Support
-        class QuantumCosmicEnhancer {
+        // Enhanced Cosmic System with Triple Moon Support
+        class TripleMoonCosmicEnhancer {
             constructor() {
                 this.initParticlesJS();
                 this.initDynamicStars();
                 this.initEnhancedShootingStars();
                 this.initMouseTracking();
-                this.initQuantumMoonPhaseSystem();
+                this.initTripleMoonPhaseSystem();
                 this.initQuantumTrailSystem();
                 this.initScrollEffects();
                 this.initAnimeJSAnimations();
@@ -1719,17 +1819,17 @@
                     particlesJS('particles-js', {
                         particles: {
                             number: {
-                                value: 150,
+                                value: 180,
                                 density: {
                                     enable: true,
                                     value_area: 800
                                 }
                             },
                             color: {
-                                value: ['#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#ffffff', '#1a1a1a']
+                                value: ['#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#ffffff', '#1a1a1a', '#808080']
                             },
                             shape: {
-                                type: ['circle', 'triangle'],
+                                type: ['circle', 'triangle', 'star'],
                                 stroke: {
                                     width: 0,
                                     color: '#000000'
@@ -1798,7 +1898,7 @@
                                     }
                                 },
                                 push: {
-                                    particles_nb: 6
+                                    particles_nb: 8
                                 }
                             }
                         },
@@ -1812,15 +1912,15 @@
                 const container = document.querySelector('.dynamic-stars');
                 if (!container) return;
 
-                for (let i = 0; i < 30; i++) {
+                for (let i = 0; i < 35; i++) {
                     setTimeout(() => {
                         this.createQuantumStars(container);
-                    }, i * 150);
+                    }, i * 120);
                 }
 
                 setInterval(() => {
                     this.createQuantumStars(container);
-                }, 2500 + Math.random() * 3500);
+                }, 2000 + Math.random() * 3000);
             }
 
             createQuantumStars(container) {
@@ -1831,7 +1931,7 @@
                 star.style.animationDelay = Math.random() * 4 + 's';
                 star.style.animationDuration = (2.5 + Math.random() * 4) + 's';
                 
-                const colors = ['#ffffff', '#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#1a1a1a', '#8A2BE2'];
+                const colors = ['#ffffff', '#C0C0C0', '#E5E4E2', '#4682B4', '#FFD700', '#1a1a1a', '#808080', '#8A2BE2'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 star.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
                 
@@ -1851,7 +1951,7 @@
 
                 setInterval(() => {
                     this.createQuantumShootingStar(container);
-                }, 1200 + Math.random() * 2800);
+                }, 1000 + Math.random() * 2500);
             }
 
             createQuantumShootingStar(container) {
@@ -1866,7 +1966,7 @@
                 star.style.animationDelay = Math.random() * 1 + 's';
                 star.style.animationDuration = (1.8 + Math.random() * 2.5) + 's';
                 
-                const colors = ['#ffffff', '#C0C0C0', '#4682B4', '#FFD700', '#FF69B4', '#1a1a1a', '#00FFFF'];
+                const colors = ['#ffffff', '#C0C0C0', '#4682B4', '#FFD700', '#FF69B4', '#1a1a1a', '#808080', '#00FFFF'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 star.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
                 star.style.boxShadow = `0 0 20px ${color}`;
@@ -1912,12 +2012,12 @@
                 });
             }
 
-            // Quantum Moon Phase System
-            initQuantumMoonPhaseSystem() {
-                const phases = ['quantum', 'white', 'black'];
+            // Triple Moon Phase System
+            initTripleMoonPhaseSystem() {
+                const phases = ['white', 'black', 'gray'];
                 let currentPhase = 0;
 
-                const cycleQuantumPhases = () => {
+                const cycleTripleMoonPhases = () => {
                     const currentMoon = document.querySelector('.moon-phase.active');
                     if (currentMoon) {
                         currentMoon.classList.remove('active');
@@ -1945,11 +2045,11 @@
                     }, 200);
 
                     // Trigger quantum effects based on phase
-                    this.triggerQuantumPhaseEffects(nextPhase);
+                    this.triggerTripleMoonPhaseEffects(nextPhase);
                 };
 
-                // Cycle through phases every 8 seconds
-                setInterval(cycleQuantumPhases, 8000);
+                // Cycle through phases every 10 seconds
+                setInterval(cycleTripleMoonPhases, 10000);
 
                 // Manual phase switching on click
                 document.querySelectorAll('.moon-phase').forEach(phase => {
@@ -1957,52 +2057,58 @@
                         const targetPhase = phase.dataset.phase;
                         const targetIndex = phases.indexOf(targetPhase);
                         if (targetIndex !== -1 && targetIndex !== currentPhase) {
-                            currentPhase = targetIndex - 1; // Will be incremented in cycleQuantumPhases
-                            cycleQuantumPhases();
+                            currentPhase = targetIndex - 1; // Will be incremented in cycleTripleMoonPhases
+                            cycleTripleMoonPhases();
                         }
                     });
                 });
             }
 
-            // Quantum Phase Effects
-            triggerQuantumPhaseEffects(phase) {
+            // Triple Moon Phase Effects
+            triggerTripleMoonPhaseEffects(phase) {
                 const quantumNexus = document.querySelector('.quantum-nexus');
                 const quantumPortal = document.querySelector('.quantum-portal');
                 
                 // Remove existing phase classes
-                quantumNexus?.classList.remove('quantum-active', 'white-active', 'black-active');
-                quantumPortal?.classList.remove('quantum-active', 'white-active', 'black-active');
+                quantumNexus?.classList.remove('white-active', 'black-active', 'gray-active');
+                quantumPortal?.classList.remove('white-active', 'black-active', 'gray-active');
                 
                 // Add new phase class
                 quantumNexus?.classList.add(`${phase}-active`);
                 quantumPortal?.classList.add(`${phase}-active`);
 
                 // Create phase-specific particle bursts
-                this.createQuantumPhaseBurst(phase);
+                this.createTripleMoonPhaseBurst(phase);
 
                 // Update color scheme dynamically
-                this.updateQuantumColorScheme(phase);
+                this.updateTripleMoonColorScheme(phase);
+
+                // Dispatch custom event
+                const event = new CustomEvent('tripleMoonPhaseChange', {
+                    detail: { phase }
+                });
+                document.dispatchEvent(event);
             }
 
-            // Quantum Phase Particle Burst
-            createQuantumPhaseBurst(phase) {
-                const container = document.querySelector('.dual-moon-system');
+            // Triple Moon Phase Particle Burst
+            createTripleMoonPhaseBurst(phase) {
+                const container = document.querySelector('.triple-moon-system');
                 if (!container) return;
 
                 const colors = {
-                    quantum: ['#4682B4', '#8A2BE2', '#00FFFF', '#FFD700'],
                     white: ['#ffffff', '#f0f0f0', '#e8e8e8', '#C0C0C0'],
-                    black: ['#1a1a1a', '#2a2a2a', '#4a4a4a', '#C0C0C0']
+                    black: ['#1a1a1a', '#2a2a2a', '#4a4a4a', '#C0C0C0'],
+                    gray: ['#808080', '#696969', '#A0A0A0', '#C0C0C0']
                 };
 
-                const phaseColors = colors[phase] || colors.quantum;
+                const phaseColors = colors[phase] || colors.white;
 
-                for (let i = 0; i < 12; i++) {
+                for (let i = 0; i < 15; i++) {
                     setTimeout(() => {
                         const particle = document.createElement('div');
                         particle.style.position = 'absolute';
-                        particle.style.width = '4px';
-                        particle.style.height = '4px';
+                        particle.style.width = '5px';
+                        particle.style.height = '5px';
                         particle.style.borderRadius = '50%';
                         particle.style.left = '50%';
                         particle.style.top = '50%';
@@ -2014,42 +2120,39 @@
                         particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
                         particle.style.boxShadow = `0 0 15px ${color}`;
 
-                        const angle = (i / 12) * Math.PI * 2;
-                        const distance = 80 + Math.random() * 40;
+                        const angle = (i / 15) * Math.PI * 2;
+                        const distance = 90 + Math.random() * 50;
                         const endX = Math.cos(angle) * distance;
                         const endY = Math.sin(angle) * distance;
 
                         container.appendChild(particle);
 
                         // Animate particle burst
-                        anime({
-                            targets: particle,
-                            translateX: endX,
-                            translateY: endY,
-                            scale: [1, 0],
-                            opacity: [1, 0],
-                            duration: 1500 + Math.random() * 1000,
-                            easing: 'easeOutQuart',
-                            complete: () => {
-                                if (particle.parentNode) {
-                                    particle.remove();
+                        if (typeof anime !== 'undefined') {
+                            anime({
+                                targets: particle,
+                                translateX: endX,
+                                translateY: endY,
+                                scale: [1, 0],
+                                opacity: [1, 0],
+                                duration: 1800 + Math.random() * 1200,
+                                easing: 'easeOutQuart',
+                                complete: () => {
+                                    if (particle.parentNode) {
+                                        particle.remove();
+                                    }
                                 }
-                            }
-                        });
-                    }, i * 50);
+                            });
+                        }
+                    }, i * 40);
                 }
             }
 
-            // Dynamic Color Scheme Updates
-            updateQuantumColorScheme(phase) {
+            // Dynamic Color Scheme Updates for Triple Moon
+            updateTripleMoonColorScheme(phase) {
                 const root = document.documentElement;
                 
                 const colorSchemes = {
-                    quantum: {
-                        '--primary-accent': '#4682B4',
-                        '--secondary-accent': '#8A2BE2',
-                        '--tertiary-accent': '#00FFFF'
-                    },
                     white: {
                         '--primary-accent': '#ffffff',
                         '--secondary-accent': '#f0f0f0',
@@ -2059,6 +2162,11 @@
                         '--primary-accent': '#1a1a1a',
                         '--secondary-accent': '#2a2a2a',
                         '--tertiary-accent': '#4a4a4a'
+                    },
+                    gray: {
+                        '--primary-accent': '#808080',
+                        '--secondary-accent': '#696969',
+                        '--tertiary-accent': '#A0A0A0'
                     }
                 };
 
@@ -2070,13 +2178,14 @@
                 }
             }
 
-            // Quantum Trail System for Orbiting Moons
+            // Quantum Trail System for Three Orbiting Moons
             initQuantumTrailSystem() {
                 const whiteMoon = document.querySelector('.white-moon');
                 const blackMoon = document.querySelector('.black-moon');
-                const container = document.querySelector('.dual-moon-system');
+                const grayMoon = document.querySelector('.gray-moon');
+                const container = document.querySelector('.triple-moon-system');
 
-                if (!whiteMoon || !blackMoon || !container) return;
+                if (!whiteMoon || !blackMoon || !grayMoon || !container) return;
 
                 const createTrail = (moon, className) => {
                     const rect = moon.getBoundingClientRect();
@@ -2093,17 +2202,21 @@
                         if (trail.parentNode) {
                             trail.remove();
                         }
-                    }, 2500);
+                    }, 3000);
                 };
 
-                // Create trails periodically
+                // Create trails periodically for each moon
                 setInterval(() => {
                     createTrail(whiteMoon, 'white-trail');
-                }, 150);
+                }, 180);
 
                 setInterval(() => {
                     createTrail(blackMoon, 'black-trail');
-                }, 180);
+                }, 200);
+
+                setInterval(() => {
+                    createTrail(grayMoon, 'gray-trail');
+                }, 120);
             }
 
             // Enhanced Scroll Effects
@@ -2145,9 +2258,9 @@
                         }
                     });
 
-                    // Quantum nexus rotation on scroll
-                    gsap.to('.quantum-nexus', {
-                        rotation: 360,
+                    // Triple moon system rotation on scroll
+                    gsap.to('.triple-moon-system', {
+                        rotation: 180,
                         ease: 'none',
                         scrollTrigger: {
                             trigger: 'body',
@@ -2190,8 +2303,8 @@
                     anime({
                         targets: '.quantum-symbol',
                         scale: [1, 1.2, 1],
-                        rotate: [0, 180, 360],
-                        duration: 8000,
+                        rotate: [0, 120, 240, 360],
+                        duration: 12000,
                         easing: 'easeInOutSine',
                         loop: true
                     });
@@ -2211,7 +2324,7 @@
                         targets: '.orbital-ring',
                         scale: [1, 1.05, 1],
                         opacity: [0.3, 0.8, 0.3],
-                        duration: 6000,
+                        duration: 8000,
                         delay: anime.stagger(1000),
                         easing: 'easeInOutSine',
                         loop: true
@@ -2221,7 +2334,7 @@
                     anime({
                         targets: '.quantum-particle',
                         rotate: 360,
-                        duration: anime.stagger([3000, 5000]),
+                        duration: anime.stagger([3000, 5000, 4000]),
                         easing: 'linear',
                         loop: true
                     });
@@ -2235,7 +2348,7 @@
 
                 setInterval(() => {
                     this.createQuantumParticle(quantumNexus);
-                }, 800 + Math.random() * 1200);
+                }, 600 + Math.random() * 1000);
             }
 
             createQuantumParticle(container) {
@@ -2250,7 +2363,7 @@
                 particle.style.pointerEvents = 'none';
                 particle.style.zIndex = '8';
 
-                const colors = ['#ffffff', '#4682B4', '#8A2BE2', '#00FFFF', '#FFD700', '#C0C0C0'];
+                const colors = ['#ffffff', '#4682B4', '#8A2BE2', '#00FFFF', '#FFD700', '#C0C0C0', '#808080'];
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
                 particle.style.boxShadow = `0 0 10px ${color}`;
@@ -2260,7 +2373,7 @@
                 // Quantum particle behavior
                 if (typeof anime !== 'undefined') {
                     const angle = Math.random() * Math.PI * 2;
-                    const radius = 30 + Math.random() * 20;
+                    const radius = 25 + Math.random() * 15;
                     const endX = Math.cos(angle) * radius;
                     const endY = Math.sin(angle) * radius;
 
@@ -2271,7 +2384,7 @@
                         scale: [0, 1.5, 0],
                         opacity: [0, 1, 0],
                         rotate: [0, 720],
-                        duration: 3000 + Math.random() * 2000,
+                        duration: 2500 + Math.random() * 2000,
                         easing: 'easeInOutSine',
                         complete: () => {
                             if (particle.parentNode) {
@@ -2291,30 +2404,30 @@
                     const gainNode = audioContext.createGain();
 
                     // Very subtle ambient frequency
-                    oscillator.frequency.setValueAtTime(40, audioContext.currentTime); // Sub-bass
+                    oscillator.frequency.setValueAtTime(45, audioContext.currentTime); // Sub-bass
                     gainNode.gain.setValueAtTime(0.001, audioContext.currentTime); // Very quiet
 
                     oscillator.connect(gainNode);
                     gainNode.connect(audioContext.destination);
 
-                    // Modulate frequency based on quantum phase
+                    // Modulate frequency based on triple moon phase
                     const modulateAmbientSound = (phase) => {
                         const frequencies = {
-                            quantum: 40,
                             white: 60,
-                            black: 30
+                            black: 30,
+                            gray: 45
                         };
                         
                         if (oscillator && audioContext.state === 'running') {
                             oscillator.frequency.setValueAtTime(
-                                frequencies[phase] || 40, 
+                                frequencies[phase] || 45, 
                                 audioContext.currentTime
                             );
                         }
                     };
 
-                    // Connect to quantum phase system
-                    document.addEventListener('quantumPhaseChange', (e) => {
+                    // Connect to triple moon phase system
+                    document.addEventListener('tripleMoonPhaseChange', (e) => {
                         modulateAmbientSound(e.detail.phase);
                     });
 
@@ -2333,14 +2446,113 @@
             }
         }
 
-        // Enhanced Interaction Handlers
-        class QuantumInteractionSystem {
+        // Enhanced Interaction Handlers for Triple Moon System
+        class TripleMoonInteractionSystem {
             constructor() {
                 this.initRoleInteractions();
                 this.initButtonEffects();
                 this.initFormEnhancements();
                 this.initKeyboardNavigation();
                 this.initTouchGestures();
+                this.initTripleMoonInteractions();
+            }
+
+            initTripleMoonInteractions() {
+                // Individual moon click interactions
+                document.querySelectorAll('.white-moon, .black-moon, .gray-moon').forEach(moon => {
+                    moon.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.triggerMoonClickEffect(moon);
+                    });
+                });
+
+                // Phase indicator interactions
+                document.querySelectorAll('.moon-phase').forEach(phase => {
+                    phase.addEventListener('mouseenter', () => {
+                        this.createPhaseHoverEffect(phase);
+                    });
+                });
+            }
+
+            triggerMoonClickEffect(moon) {
+                const moonType = moon.classList.contains('white-moon') ? 'white' :
+                                moon.classList.contains('black-moon') ? 'black' : 'gray';
+                
+                this.createMoonClickBurst(moon, moonType);
+            }
+
+            createMoonClickBurst(moon, type) {
+                const rect = moon.getBoundingClientRect();
+                const colors = {
+                    white: ['#ffffff', '#f0f0f0', '#e8e8e8'],
+                    black: ['#1a1a1a', '#2a2a2a', '#4a4a4a'],
+                    gray: ['#808080', '#696969', '#A0A0A0']
+                };
+
+                const moonColors = colors[type];
+
+                for (let i = 0; i < 8; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = rect.left + rect.width / 2 + 'px';
+                    particle.style.top = rect.top + rect.height / 2 + 'px';
+                    particle.style.width = '4px';
+                    particle.style.height = '4px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.background = moonColors[Math.floor(Math.random() * moonColors.length)];
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '1000';
+                    particle.style.boxShadow = `0 0 10px ${moonColors[0]}`;
+
+                    document.body.appendChild(particle);
+
+                    if (typeof anime !== 'undefined') {
+                        const angle = (i / 8) * Math.PI * 2;
+                        anime({
+                            targets: particle,
+                            translateX: Math.cos(angle) * 80,
+                            translateY: Math.sin(angle) * 80,
+                            scale: [1, 0],
+                            opacity: [1, 0],
+                            duration: 1200,
+                            easing: 'easeOutQuart',
+                            complete: () => particle.remove()
+                        });
+                    }
+                }
+            }
+
+            createPhaseHoverEffect(phase) {
+                const rect = phase.getBoundingClientRect();
+                
+                for (let i = 0; i < 5; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.left = rect.left + Math.random() * rect.width + 'px';
+                    sparkle.style.top = rect.top + Math.random() * rect.height + 'px';
+                    sparkle.style.width = '2px';
+                    sparkle.style.height = '2px';
+                    sparkle.style.background = '#C0C0C0';
+                    sparkle.style.borderRadius = '50%';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.zIndex = '1000';
+                    sparkle.style.boxShadow = '0 0 8px #C0C0C0';
+
+                    document.body.appendChild(sparkle);
+
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: sparkle,
+                            translateY: -40,
+                            opacity: [1, 0],
+                            scale: [1, 0],
+                            duration: 1000,
+                            delay: i * 100,
+                            easing: 'easeOutQuart',
+                            complete: () => sparkle.remove()
+                        });
+                    }
+                }
             }
 
             initRoleInteractions() {
@@ -2369,10 +2581,10 @@
             }
 
             createColorBurst(element) {
-                const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+                const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD'];
                 const rect = element.getBoundingClientRect();
 
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 10; i++) {
                     const particle = document.createElement('div');
                     particle.style.position = 'fixed';
                     particle.style.left = rect.left + rect.width / 2 + 'px';
@@ -2387,14 +2599,14 @@
                     document.body.appendChild(particle);
 
                     if (typeof anime !== 'undefined') {
-                        const angle = (i / 8) * Math.PI * 2;
+                        const angle = (i / 10) * Math.PI * 2;
                         anime({
                             targets: particle,
-                            translateX: Math.cos(angle) * 100,
-                            translateY: Math.sin(angle) * 100,
+                            translateX: Math.cos(angle) * 120,
+                            translateY: Math.sin(angle) * 120,
                             scale: [1, 0],
                             opacity: [1, 0],
-                            duration: 1000,
+                            duration: 1200,
                             easing: 'easeOutQuart',
                             complete: () => particle.remove()
                         });
@@ -2403,7 +2615,7 @@
             }
 
             createTextParticles(element) {
-                const words = ['✍️', '📝', '✨', '💭', '📖', '🖋️'];
+                                const words = ['✍️', '📝', '✨', '💭', '📖', '🖋️', '📚', '💡'];
                 const rect = element.getBoundingClientRect();
 
                 words.forEach((word, i) => {
@@ -2421,12 +2633,12 @@
                     if (typeof anime !== 'undefined') {
                         anime({
                             targets: particle,
-                            translateY: -80 - (i * 20),
-                            translateX: (Math.random() - 0.5) * 60,
+                            translateY: -100 - (i * 25),
+                            translateX: (Math.random() - 0.5) * 80,
                             opacity: [1, 0],
-                            scale: [1, 1.5],
-                            duration: 2000,
-                            delay: i * 200,
+                            scale: [1, 1.8],
+                            duration: 2500,
+                            delay: i * 250,
                             easing: 'easeOutQuart',
                             complete: () => particle.remove()
                         });
@@ -2437,14 +2649,17 @@
             createDataStream(element) {
                 const rect = element.getBoundingClientRect();
                 const binary = ['0', '1'];
+                const symbols = ['⚛', '∞', '◊', '△', '▽', '◯'];
 
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < 20; i++) {
                     const digit = document.createElement('div');
-                    digit.textContent = binary[Math.floor(Math.random() * 2)];
+                    digit.textContent = Math.random() > 0.7 ? 
+                        symbols[Math.floor(Math.random() * symbols.length)] :
+                        binary[Math.floor(Math.random() * 2)];
                     digit.style.position = 'fixed';
                     digit.style.left = rect.left + Math.random() * rect.width + 'px';
                     digit.style.top = rect.top + 'px';
-                    digit.style.color = '#00FF00';
+                    digit.style.color = Math.random() > 0.5 ? '#00FF00' : '#C0C0C0';
                     digit.style.fontFamily = 'monospace';
                     digit.style.fontSize = '14px';
                     digit.style.pointerEvents = 'none';
@@ -2455,10 +2670,10 @@
                     if (typeof anime !== 'undefined') {
                         anime({
                             targets: digit,
-                            translateY: 200,
+                            translateY: 250,
                             opacity: [1, 0],
-                            duration: 2000 + Math.random() * 1000,
-                            delay: i * 100,
+                            duration: 2500 + Math.random() * 1500,
+                            delay: i * 120,
                             easing: 'linear',
                             complete: () => digit.remove()
                         });
@@ -2469,7 +2684,7 @@
             createQuantumRipple(element) {
                 const rect = element.getBoundingClientRect();
                 
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < 4; i++) {
                     const ripple = document.createElement('div');
                     ripple.style.position = 'fixed';
                     ripple.style.left = rect.left + rect.width / 2 + 'px';
@@ -2487,11 +2702,11 @@
                     if (typeof anime !== 'undefined') {
                         anime({
                             targets: ripple,
-                            width: 200,
-                            height: 200,
+                            width: 250,
+                            height: 250,
                             opacity: [0.8, 0],
-                            duration: 1500,
-                            delay: i * 300,
+                            duration: 2000,
+                            delay: i * 400,
                             easing: 'easeOutQuart',
                             complete: () => ripple.remove()
                         });
@@ -2502,7 +2717,7 @@
             createRoleParticles(element) {
                 const rect = element.getBoundingClientRect();
                 
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < 4; i++) {
                     const particle = document.createElement('div');
                     particle.style.position = 'fixed';
                     particle.style.left = rect.left + Math.random() * rect.width + 'px';
@@ -2520,10 +2735,10 @@
                     if (typeof anime !== 'undefined') {
                         anime({
                             targets: particle,
-                            translateY: -30,
+                            translateY: -40,
                             opacity: [1, 0],
                             scale: [1, 0],
-                            duration: 1500,
+                            duration: 1800,
                             easing: 'easeOutQuart',
                             complete: () => particle.remove()
                         });
@@ -2560,10 +2775,10 @@
                 if (typeof anime !== 'undefined') {
                     anime({
                         targets: ripple,
-                        width: 300,
-                        height: 300,
+                        width: 350,
+                        height: 350,
                         opacity: [0.6, 0],
-                        duration: 600,
+                        duration: 800,
                         easing: 'easeOutQuart',
                         complete: () => ripple.remove()
                     });
@@ -2603,7 +2818,7 @@
                         targets: aura,
                         scale: [1, 1.05],
                         opacity: [0, 1],
-                        duration: 300,
+                        duration: 400,
                         easing: 'easeOutQuart'
                     });
                 }
@@ -2614,7 +2829,7 @@
                             targets: aura,
                             scale: [1.05, 1],
                             opacity: [1, 0],
-                            duration: 300,
+                            duration: 400,
                             easing: 'easeOutQuart',
                             complete: () => aura.remove()
                         });
@@ -2627,7 +2842,7 @@
                 const particle = document.createElement('div');
                 
                 particle.style.position = 'fixed';
-                particle.style.left = rect.right - 20 + 'px';
+                particle.style.left = rect.right - 25 + 'px';
                 particle.style.top = rect.top + rect.height / 2 + 'px';
                 particle.style.width = '2px';
                 particle.style.height = '2px';
@@ -2641,11 +2856,11 @@
                 if (typeof anime !== 'undefined') {
                     anime({
                         targets: particle,
-                        translateX: 20,
-                        translateY: -10 + Math.random() * 20,
+                        translateX: 25,
+                        translateY: -15 + Math.random() * 30,
                         opacity: [1, 0],
                         scale: [1, 0],
-                        duration: 800,
+                        duration: 1000,
                         easing: 'easeOutQuart',
                         complete: () => particle.remove()
                     });
@@ -2656,6 +2871,12 @@
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Tab') {
                         document.body.classList.add('keyboard-navigation');
+                    }
+
+                    // Triple moon phase switching with arrow keys
+                    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                        const direction = e.key === 'ArrowRight' ? 'next' : 'previous';
+                        this.triggerPhaseChange(direction);
                     }
                 });
 
@@ -2680,8 +2901,8 @@
                     const deltaX = touchEndX - touchStartX;
                     const deltaY = touchEndY - touchStartY;
                     
-                    // Swipe gestures for quantum phase changes
-                    if (Math.abs(deltaX) > 50 && Math.abs(deltaY) < 100) {
+                    // Swipe gestures for triple moon phase changes
+                    if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 120) {
                         if (deltaX > 0) {
                             // Swipe right - next phase
                             this.triggerPhaseChange('next');
@@ -2690,23 +2911,67 @@
                             this.triggerPhaseChange('previous');
                         }
                     }
+
+                    // Vertical swipes for special effects
+                    if (Math.abs(deltaY) > 80 && Math.abs(deltaX) < 100) {
+                        if (deltaY < 0) {
+                            // Swipe up - cosmic burst
+                            this.triggerCosmicBurst();
+                        }
+                    }
                 });
             }
 
             triggerPhaseChange(direction) {
-                const event = new CustomEvent('quantumPhaseSwipe', {
+                const event = new CustomEvent('tripleMoonPhaseSwipe', {
                     detail: { direction }
                 });
                 document.dispatchEvent(event);
             }
+
+            triggerCosmicBurst() {
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.left = centerX + 'px';
+                    particle.style.top = centerY + 'px';
+                    particle.style.width = '4px';
+                    particle.style.height = '4px';
+                    particle.style.borderRadius = '50%';
+                    particle.style.background = ['#ffffff', '#C0C0C0', '#808080'][Math.floor(Math.random() * 3)];
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '1000';
+                    particle.style.boxShadow = '0 0 15px currentColor';
+
+                    document.body.appendChild(particle);
+
+                    if (typeof anime !== 'undefined') {
+                        const angle = (i / 20) * Math.PI * 2;
+                        anime({
+                            targets: particle,
+                            translateX: Math.cos(angle) * 200,
+                            translateY: Math.sin(angle) * 200,
+                            scale: [1, 0],
+                            opacity: [1, 0],
+                            duration: 2000,
+                            easing: 'easeOutQuart',
+                            complete: () => particle.remove()
+                        });
+                    }
+                }
+            }
         }
 
-        // Performance Optimization
-        class QuantumPerformanceOptimizer {
+        // Performance Optimization for Triple Moon System
+        class TripleMoonPerformanceOptimizer {
             constructor() {
                 this.initIntersectionObserver();
                 this.initPerformanceMonitoring();
                 this.optimizeAnimations();
+                this.initMemoryManagement();
             }
 
             initIntersectionObserver() {
@@ -2714,18 +2979,36 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('in-viewport');
+                            this.enableAnimations(entry.target);
                         } else {
                             entry.target.classList.remove('in-viewport');
+                            this.disableAnimations(entry.target);
                         }
                     });
                 }, {
                     threshold: 0.1,
-                    rootMargin: '50px'
+                    rootMargin: '100px'
                 });
 
-                document.querySelectorAll('.cosmic-card, .role, .moon-phase').forEach(el => {
+                document.querySelectorAll('.cosmic-card, .role, .moon-phase, .triple-moon-system').forEach(el => {
                     observer.observe(el);
                 });
+            }
+
+            enableAnimations(element) {
+                element.style.animationPlayState = 'running';
+                element.querySelectorAll('*').forEach(child => {
+                    child.style.animationPlayState = 'running';
+                });
+            }
+
+            disableAnimations(element) {
+                if (!element.closest('.triple-moon-system')) {
+                    element.style.animationPlayState = 'paused';
+                    element.querySelectorAll('*').forEach(child => {
+                        child.style.animationPlayState = 'paused';
+                    });
+                }
             }
 
             initPerformanceMonitoring() {
@@ -2742,8 +3025,10 @@
                         // Adjust animation quality based on FPS
                         if (fps < 30) {
                             document.body.classList.add('low-performance');
-                        } else {
+                            this.reducedAnimationMode();
+                        } else if (fps > 50) {
                             document.body.classList.remove('low-performance');
+                            this.fullAnimationMode();
                         }
                         
                         frameCount = 0;
@@ -2756,43 +3041,323 @@
                 requestAnimationFrame(measureFPS);
             }
 
-            optimizeAnimations() {
-                // Reduce animations on low-performance devices
+            reducedAnimationMode() {
+                // Reduce particle count
                 const style = document.createElement('style');
+                style.id = 'performance-optimization';
                 style.textContent = `
-                    .low-performance * {
-                        animation-duration: 0.1s !important;
-                        transition-duration: 0.1s !important;
-                    }
-                    
-                    .low-performance .shooting-star,
-                    .low-performance .shine-star {
+                    .low-performance .shooting-star:nth-child(n+3) {
                         display: none;
                     }
+                    .low-performance .shine-star:nth-child(n+6) {
+                        display: none;
+                    }
+                    .low-performance * {
+                        animation-duration: 0.5s !important;
+                        transition-duration: 0.3s !important;
+                    }
                 `;
-                document.head.appendChild(style);
+                
+                if (!document.getElementById('performance-optimization')) {
+                    document.head.appendChild(style);
+                }
+            }
+
+            fullAnimationMode() {
+                const existingStyle = document.getElementById('performance-optimization');
+                if (existingStyle) {
+                    existingStyle.remove();
+                }
+            }
+
+            optimizeAnimations() {
+                // Use transform3d for hardware acceleration
+                const animatedElements = document.querySelectorAll('.white-moon, .black-moon, .gray-moon, .quantum-nexus');
+                animatedElements.forEach(element => {
+                    element.style.transform += ' translateZ(0)';
+                    element.style.willChange = 'transform';
+                });
+            }
+
+            initMemoryManagement() {
+                // Clean up particles periodically
+                setInterval(() => {
+                    const particles = document.querySelectorAll('.moon-trail, .quantum-particle');
+                    if (particles.length > 50) {
+                        // Remove oldest particles
+                        for (let i = 0; i < 10 && i < particles.length; i++) {
+                            particles[i].remove();
+                        }
+                    }
+                }, 5000);
+
+                // Clean up event listeners on page unload
+                window.addEventListener('beforeunload', () => {
+                    document.removeEventListener('mousemove', this.mouseMoveHandler);
+                    document.removeEventListener('touchstart', this.touchStartHandler);
+                    document.removeEventListener('touchend', this.touchEndHandler);
+                });
             }
         }
 
-        // Initialize All Systems
+        // Advanced Triple Moon Features
+        class TripleMoonAdvancedFeatures {
+            constructor() {
+                this.initMoonPhaseCalendar();
+                this.initCosmicWeather();
+                this.initQuantumEntanglement();
+                this.initDimensionalPortals();
+            }
+
+            initMoonPhaseCalendar() {
+                // Sync with actual lunar calendar
+                const today = new Date();
+                const lunarCycle = 29.53; // days
+                const knownNewMoon = new Date('2024-01-11'); // Known new moon date
+                
+                const daysSinceNewMoon = (today - knownNewMoon) / (1000 * 60 * 60 * 24);
+                const currentLunarPhase = (daysSinceNewMoon % lunarCycle) / lunarCycle;
+                
+                // Map to our three-phase system
+                let dominantPhase;
+                if (currentLunarPhase < 0.33) {
+                    dominantPhase = 'black'; // New moon period
+                } else if (currentLunarPhase < 0.66) {
+                    dominantPhase = 'gray'; // Waxing/Waning period
+                } else {
+                    dominantPhase = 'white'; // Full moon period
+                }
+
+                // Update initial phase based on real lunar cycle
+                setTimeout(() => {
+                    const targetPhase = document.querySelector(`.moon-phase[data-phase="${dominantPhase}"]`);
+                    if (targetPhase) {
+                        document.querySelector('.moon-phase.active')?.classList.remove('active');
+                        targetPhase.classList.add('active');
+                    }
+                }, 2000);
+            }
+
+            initCosmicWeather() {
+                // Simulate cosmic weather effects
+                const weatherPatterns = [
+                    'solar-storm',
+                    'cosmic-calm',
+                    'stellar-winds',
+                    'quantum-turbulence',
+                    'dimensional-aurora'
+                ];
+
+                setInterval(() => {
+                    const currentWeather = weatherPatterns[Math.floor(Math.random() * weatherPatterns.length)];
+                    this.applyCosmicWeather(currentWeather);
+                }, 30000); // Change weather every 30 seconds
+            }
+
+            applyCosmicWeather(weather) {
+                document.body.className = document.body.className.replace(/cosmic-weather-\w+/g, '');
+                document.body.classList.add(`cosmic-weather-${weather}`);
+
+                // Create weather-specific effects
+                switch (weather) {
+                    case 'solar-storm':
+                        this.createSolarStormEffect();
+                        break;
+                    case 'stellar-winds':
+                        this.createStellarWindsEffect();
+                        break;
+                    case 'quantum-turbulence':
+                        this.createQuantumTurbulenceEffect();
+                        break;
+                    case 'dimensional-aurora':
+                        this.createDimensionalAuroraEffect();
+                        break;
+                }
+            }
+
+            createSolarStormEffect() {
+                const container = document.querySelector('.cosmic-background');
+                for (let i = 0; i < 15; i++) {
+                    const flare = document.createElement('div');
+                    flare.style.position = 'absolute';
+                    flare.style.width = '2px';
+                    flare.style.height = '100px';
+                    flare.style.background = 'linear-gradient(to bottom, #FFD700, transparent)';
+                    flare.style.left = Math.random() * 100 + '%';
+                    flare.style.top = '-100px';
+                    flare.style.opacity = '0.7';
+                    flare.style.pointerEvents = 'none';
+
+                    container.appendChild(flare);
+
+                    if (typeof anime !== 'undefined') {
+                        anime({
+                            targets: flare,
+                            translateY: window.innerHeight + 100,
+                            opacity: [0.7, 0],
+                            duration: 2000 + Math.random() * 1000,
+                            delay: i * 100,
+                            easing: 'linear',
+                            complete: () => flare.remove()
+                        });
+                    }
+                }
+            }
+
+            createStellarWindsEffect() {
+                const winds = document.createElement('div');
+                winds.style.position = 'fixed';
+                winds.style.top = '0';
+                winds.style.left = '0';
+                winds.style.width = '100%';
+                winds.style.height = '100%';
+                winds.style.background = 'linear-gradient(45deg, transparent, rgba(192,192,192,0.1), transparent)';
+                winds.style.pointerEvents = 'none';
+                winds.style.zIndex = '1';
+
+                document.body.appendChild(winds);
+
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: winds,
+                        translateX: ['-100%', '100%'],
+                        duration: 8000,
+                        easing: 'linear',
+                        complete: () => winds.remove()
+                    });
+                }
+            }
+
+            createQuantumTurbulenceEffect() {
+                const turbulence = document.querySelector('.quantum-nexus');
+                if (turbulence && typeof anime !== 'undefined') {
+                    anime({
+                        targets: turbulence,
+                        scale: [1, 1.3, 0.8, 1.1, 1],
+                        rotate: [0, 15, -10, 5, 0],
+                        duration: 3000,
+                        easing: 'easeInOutSine'
+                    });
+                }
+            }
+
+            createDimensionalAuroraEffect() {
+                const aurora = document.createElement('div');
+                aurora.style.position = 'fixed';
+                aurora.style.top = '0';
+                aurora.style.left = '0';
+                aurora.style.width = '100%';
+                aurora.style.height = '100%';
+                aurora.style.background = `
+                    radial-gradient(ellipse at 20% 30%, rgba(0,255,127,0.2) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 70%, rgba(138,43,226,0.2) 0%, transparent 50%),
+                    radial-gradient(ellipse at 50% 10%, rgba(255,20,147,0.15) 0%, transparent 50%)
+                `;
+                aurora.style.pointerEvents = 'none';
+                aurora.style.zIndex = '1';
+                aurora.style.opacity = '0';
+
+                document.body.appendChild(aurora);
+
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: aurora,
+                        opacity: [0, 1, 0],
+                        duration: 6000,
+                        easing: 'easeInOutSine',
+                        complete: () => aurora.remove()
+                    });
+                }
+            }
+
+            initQuantumEntanglement() {
+                // Create quantum entanglement between the three moons
+                const moons = document.querySelectorAll('.white-moon, .black-moon, .gray-moon');
+                
+                moons.forEach((moon, index) => {
+                    moon.addEventListener('click', () => {
+                        // When one moon is clicked, all moons react
+                        moons.forEach((otherMoon, otherIndex) => {
+                            if (otherIndex !== index) {
+                                this.createEntanglementEffect(otherMoon);
+                            }
+                        });
+                    });
+                });
+            }
+
+            createEntanglementEffect(moon) {
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: moon,
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 360],
+                        duration: 1000,
+                        easing: 'easeInOutSine'
+                    });
+                }
+            }
+
+            initDimensionalPortals() {
+                // Create occasional dimensional portal effects
+                setInterval(() => {
+                    if (Math.random() < 0.3) { // 30% chance every interval
+                        this.createDimensionalPortal();
+                    }
+                }, 15000);
+            }
+
+            createDimensionalPortal() {
+                const portal = document.createElement('div');
+                portal.style.position = 'fixed';
+                portal.style.width = '100px';
+                portal.style.height = '100px';
+                portal.style.borderRadius = '50%';
+                portal.style.background = 'radial-gradient(circle, rgba(138,43,226,0.8) 0%, transparent 70%)';
+                portal.style.border = '2px solid rgba(138,43,226,0.6)';
+                portal.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+                portal.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+                portal.style.pointerEvents = 'none';
+                portal.style.zIndex = '1000';
+                portal.style.opacity = '0';
+
+                document.body.appendChild(portal);
+
+                if (typeof anime !== 'undefined') {
+                    anime({
+                        targets: portal,
+                        scale: [0, 1.5, 0],
+                        opacity: [0, 1, 0],
+                        rotate: 720,
+                        duration: 4000,
+                        easing: 'easeInOutSine',
+                        complete: () => portal.remove()
+                    });
+                }
+            }
+        }
+
+        // Initialize All Triple Moon Systems
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize core systems
-            const cosmicEnhancer = new QuantumCosmicEnhancer();
-            const interactionSystem = new QuantumInteractionSystem();
-            const performanceOptimizer = new QuantumPerformanceOptimizer();
+            const cosmicEnhancer = new TripleMoonCosmicEnhancer();
+            const interactionSystem = new TripleMoonInteractionSystem();
+            const performanceOptimizer = new TripleMoonPerformanceOptimizer();
+            const advancedFeatures = new TripleMoonAdvancedFeatures();
 
             // Add loading completion effect
             setTimeout(() => {
                 document.body.classList.add('cosmic-loaded');
                 
-                // Trigger initial quantum burst
-                const event = new CustomEvent('quantumSystemInitialized');
+                // Trigger initial cosmic burst
+                const event = new CustomEvent('tripleMoonSystemInitialized');
                 document.dispatchEvent(event);
-            }, 1000);
+            }, 1500);
 
-            console.log('🌌 Quantum Cosmic System Initialized');
-            console.log('⚛️ Dual Moon Nexus Active');
-            console.log('✨ Interactive Quantum Field Online');
+            console.log('🌌 Triple Moon Cosmic System Initialized');
+            console.log('🌙 White Moon (Creation) - Black Moon (Void) - Gray Moon (Balance)');
+            console.log('⚛️ Quantum Nexus Active');
+            console.log('✨ Interactive Triple Moon Field Online');
         });
 
         // Service Worker for Progressive Web App
@@ -2807,6 +3372,27 @@
                     });
             });
         }
+
+        // Add CSS for cosmic weather effects
+        const weatherStyles = document.createElement('style');
+        weatherStyles.textContent = `
+            .cosmic-weather-solar-storm .nebula-layer {
+                filter: hue-rotate(60deg) brightness(1.3);
+            }
+            
+            .cosmic-weather-stellar-winds .star-field {
+                animation-duration: 2s;
+            }
+            
+            .cosmic-weather-quantum-turbulence .quantum-nexus {
+                filter: blur(1px) brightness(1.2);
+            }
+            
+            .cosmic-weather-dimensional-aurora .deep-space-layer {
+                filter: hue-rotate(120deg) saturate(1.5);
+            }
+        `;
+        document.head.appendChild(weatherStyles);
     </script>
 </body>
 </html>
