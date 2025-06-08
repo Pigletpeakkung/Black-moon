@@ -360,82 +360,268 @@
             z-index: -5;
         }
 
-        /* Enhanced Dual Moon System */
+        /* 🌙 ENHANCED DUAL MOON SYSTEM - NEW ANIMATION */
         .dual-moon-system {
             position: relative;
-            width: 280px;
-            height: 280px;
+            width: 320px;
+            height: 320px;
             margin: 2rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            perspective: 1000px;
         }
 
-        /* Main Orbit Ring */
-        .moon-orbit {
+        /* Cosmic Energy Field */
+        .cosmic-energy-field {
             position: absolute;
-            width: 280px;
-            height: 280px;
-            border: 2px solid rgba(192, 192, 192, 0.2);
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
+            background: 
+                radial-gradient(circle at 30% 30%, 
+                    rgba(255, 255, 255, 0.08) 0%,
+                    rgba(192, 192, 192, 0.04) 30%,
+                    transparent 60%),
+                radial-gradient(circle at 70% 70%, 
+                    rgba(26, 26, 26, 0.15) 0%,
+                    rgba(64, 64, 64, 0.08) 30%,
+                    transparent 60%);
+            animation: energyFieldPulse 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes energyFieldPulse {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.6;
+            }
+            25% { 
+                transform: scale(1.05) rotate(90deg);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: scale(1.1) rotate(180deg);
+                opacity: 1;
+            }
+            75% { 
+                transform: scale(1.05) rotate(270deg);
+                opacity: 0.8;
+            }
+        }
+
+        /* Orbital Rings with Breathing Effect */
+        .orbital-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(192, 192, 192, 0.2);
             background: radial-gradient(circle at center, 
-                rgba(192, 192, 192, 0.05) 0%, 
+                transparent 0%, 
                 rgba(192, 192, 192, 0.02) 50%,
-                transparent 70%);
-            box-shadow: 
-                inset 0 0 40px rgba(192, 192, 192, 0.08),
-                0 0 60px rgba(192, 192, 192, 0.03);
+                transparent 100%);
         }
 
-        /* Inner Orbit Ring */
-        .inner-orbit {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 1px solid rgba(192, 192, 192, 0.15);
-            border-radius: 50%;
+        .outer-ring {
+            width: 320px;
+            height: 320px;
+            animation: ringBreathing 12s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .middle-ring {
+            width: 240px;
+            height: 240px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: radial-gradient(circle at center, 
-                rgba(255, 255, 255, 0.03) 0%, 
-                transparent 60%);
+            animation: ringBreathing 10s ease-in-out infinite reverse;
+            z-index: 2;
         }
 
-        /* White Moon */
+        .inner-ring {
+            width: 160px;
+            height: 160px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ringBreathing 8s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        @keyframes ringBreathing {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.3;
+                border-color: rgba(192, 192, 192, 0.2);
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.08);
+                opacity: 0.7;
+                border-color: rgba(192, 192, 192, 0.4);
+            }
+        }
+
+        /* Enhanced Moon Orbits with Figure-8 Pattern */
         .white-moon {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            top: 50%;
+            left: 50%;
+            margin-top: -27.5px;
+            margin-left: -27.5px;
+            animation: whiteMoonFigure8 20s linear infinite;
+            z-index: 4;
+            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8));
+        }
+
+        .black-moon {
             position: absolute;
             width: 50px;
             height: 50px;
-            top: -25px;
+            top: 50%;
             left: 50%;
+            margin-top: -25px;
             margin-left: -25px;
-            animation: whiteMoonOrbit 25s linear infinite;
+            animation: blackMoonFigure8 16s linear infinite reverse;
             z-index: 3;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+            filter: drop-shadow(0 0 20px rgba(192, 192, 192, 0.6));
         }
 
-        /* Black Moon */
-        .black-moon {
+        /* Figure-8 Orbital Patterns */
+        @keyframes whiteMoonFigure8 {
+            0% { 
+                transform: translateX(120px) translateY(0px) rotate(0deg);
+            }
+            25% { 
+                transform: translateX(0px) translateY(-80px) rotate(90deg);
+            }
+            50% { 
+                transform: translateX(-120px) translateY(0px) rotate(180deg);
+            }
+            75% { 
+                transform: translateX(0px) translateY(80px) rotate(270deg);
+            }
+            100% { 
+                transform: translateX(120px) translateY(0px) rotate(360deg);
+            }
+        }
+
+        @keyframes blackMoonFigure8 {
+            0% { 
+                transform: translateX(90px) translateY(0px) rotate(0deg);
+            }
+            25% { 
+                transform: translateX(0px) translateY(60px) rotate(-90deg);
+            }
+            50% { 
+                transform: translateX(-90px) translateY(0px) rotate(-180deg);
+            }
+            75% { 
+                transform: translateX(0px) translateY(-60px) rotate(-270deg);
+            }
+            100% { 
+                transform: translateX(90px) translateY(0px) rotate(-360deg);
+            }
+        }
+
+        /* Central Duality Core with Morphing Animation */
+        .duality-core {
             position: absolute;
-            width: 45px;
-            height: 45px;
-            top: -22.5px;
+            top: 50%;
             left: 50%;
-            margin-left: -22.5px;
-            animation: blackMoonOrbit 20s linear infinite reverse;
-            z-index: 2;
-            filter: drop-shadow(0 0 15px rgba(192, 192, 192, 0.4));
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: 
+                radial-gradient(circle at 30% 30%, 
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(192, 192, 192, 0.08) 40%,
+                    rgba(26, 26, 26, 0.12) 60%,
+                    transparent 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            animation: dualityCoreTransform 6s ease-in-out infinite;
+            z-index: 5;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(192, 192, 192, 0.3);
         }
 
-        @keyframes whiteMoonOrbit {
-            0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+        @keyframes dualityCoreTransform {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                background: radial-gradient(circle at 30% 30%, 
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(192, 192, 192, 0.08) 40%,
+                    rgba(26, 26, 26, 0.12) 60%,
+                    transparent 100%);
+            }
+            25% { 
+                transform: translate(-50%, -50%) scale(1.1) rotate(90deg);
+                background: radial-gradient(circle at 70% 30%, 
+                    rgba(26, 26, 26, 0.2) 0%,
+                    rgba(64, 64, 64, 0.12) 40%,
+                    rgba(255, 255, 255, 0.08) 60%,
+                    transparent 100%);
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.15) rotate(180deg);
+                background: radial-gradient(circle at 70% 70%, 
+                    rgba(255, 255, 255, 0.18) 0%,
+                    rgba(192, 192, 192, 0.1) 40%,
+                    rgba(26, 26, 26, 0.15) 60%,
+                    transparent 100%);
+            }
+            75% { 
+                transform: translate(-50%, -50%) scale(1.1) rotate(270deg);
+                background: radial-gradient(circle at 30% 70%, 
+                    rgba(26, 26, 26, 0.2) 0%,
+                    rgba(64, 64, 64, 0.12) 40%,
+                    rgba(255, 255, 255, 0.08) 60%,
+                    transparent 100%);
+            }
         }
 
-        @keyframes blackMoonOrbit {
-            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        /* Energy Trails Following Moons */
+        .moon-trail {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .white-trail {
+            background: radial-gradient(circle, 
+                rgba(255, 255, 255, 0.8) 0%, 
+                rgba(255, 255, 255, 0.4) 50%,
+                transparent 100%);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            animation: trailFade 2s ease-out forwards;
+        }
+
+        .black-trail {
+            background: radial-gradient(circle, 
+                rgba(192, 192, 192, 0.8) 0%, 
+                rgba(128, 128, 128, 0.4) 50%,
+                transparent 100%);
+            box-shadow: 0 0 12px rgba(192, 192, 192, 0.5);
+            animation: trailFade 2s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            0% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% { 
+                opacity: 0;
+                transform: scale(0.3);
+            }
         }
 
         /* Enhanced Moon Phase Container with Smooth Transitions */
@@ -548,38 +734,6 @@
             50% { 
                 opacity: 1;
                 transform: translate(-50%, -50%) scale(1.2);
-            }
-        }
-
-        /* Duality Symbol in Center */
-        .duality-symbol {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, 
-                rgba(255, 255, 255, 0.1) 0%,
-                rgba(192, 192, 192, 0.05) 50%,
-                transparent 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            animation: dualityPulse 4s ease-in-out infinite;
-            z-index: 4;
-        }
-
-        @keyframes dualityPulse {
-            0%, 100% { 
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.7;
-            }
-            50% { 
-                transform: translate(-50%, -50%) scale(1.1);
-                opacity: 1;
             }
         }
 
@@ -1019,48 +1173,59 @@
             }
 
             .dual-moon-system {
-                width: 220px;
-                height: 220px;
+                width: 260px;
+                height: 260px;
             }
 
-            .moon-orbit {
-                width: 220px;
-                height: 220px;
+            .outer-ring {
+                width: 260px;
+                height: 260px;
             }
 
-            .inner-orbit {
-                width: 160px;
-                height: 160px;
+            .middle-ring {
+                width: 200px;
+                height: 200px;
+            }
+
+            .inner-ring {
+                width: 140px;
+                height: 140px;
             }
 
             .white-moon {
-                width: 40px;
-                height: 40px;
-                top: -20px;
-                margin-left: -20px;
+                width: 45px;
+                height: 45px;
+                margin-top: -22.5px;
+                margin-left: -22.5px;
             }
 
             .black-moon {
-                width: 35px;
-                height: 35px;
-                top: -17.5px;
-                margin-left: -17.5px;
+                width: 40px;
+                height: 40px;
+                margin-top: -20px;
+                margin-left: -20px;
             }
 
-            @keyframes whiteMoonOrbit {
-                0% { transform: rotate(0deg) translateX(110px) rotate(0deg); }
-                100% { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+            @keyframes whiteMoonFigure8 {
+                0% { transform: translateX(90px) translateY(0px) rotate(0deg); }
+                25% { transform: translateX(0px) translateY(-60px) rotate(90deg); }
+                50% { transform: translateX(-90px) translateY(0px) rotate(180deg); }
+                75% { transform: translateX(0px) translateY(60px) rotate(270deg); }
+                100% { transform: translateX(90px) translateY(0px) rotate(360deg); }
             }
 
-            @keyframes blackMoonOrbit {
-                0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
-                100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+            @keyframes blackMoonFigure8 {
+                0% { transform: translateX(70px) translateY(0px) rotate(0deg); }
+                25% { transform: translateX(0px) translateY(45px) rotate(-90deg); }
+                50% { transform: translateX(-70px) translateY(0px) rotate(-180deg); }
+                75% { transform: translateX(0px) translateY(-45px) rotate(-270deg); }
+                100% { transform: translateX(70px) translateY(0px) rotate(-360deg); }
             }
 
-            .duality-symbol {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
+            .duality-core {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
             }
         }
 
@@ -1107,14 +1272,17 @@
         <section class="hero-intro" id="intro">
             <div class="hero-content">
                 
-                <!-- Enhanced Dual Moon System -->
+                <!-- 🌙 ENHANCED DUAL MOON SYSTEM WITH NEW ANIMATION -->
                 <div class="dual-moon-system">
-                    <!-- Main Orbit Ring -->
-                    <div class="moon-orbit"></div>
-                    <!-- Inner Orbit Ring -->
-                    <div class="inner-orbit"></div>
+                    <!-- Cosmic Energy Field -->
+                    <div class="cosmic-energy-field"></div>
                     
-                    <!-- White Moon (Outer Orbit) -->
+                    <!-- Orbital Rings with Breathing Effect -->
+                    <div class="orbital-ring outer-ring"></div>
+                    <div class="orbital-ring middle-ring"></div>
+                    <div class="orbital-ring inner-ring"></div>
+                    
+                    <!-- White Moon (Figure-8 Orbit) -->
                     <div class="white-moon">
                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
@@ -1146,7 +1314,7 @@
                         </svg>
                     </div>
                     
-                    <!-- Black Moon (Inner Orbit) -->
+                    <!-- Black Moon (Counter Figure-8 Orbit) -->
                     <div class="black-moon">
                         <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
                             <defs>
@@ -1178,8 +1346,8 @@
                         </svg>
                     </div>
                     
-                    <!-- Duality Symbol in Center -->
-                    <div class="duality-symbol">☯</div>
+                    <!-- Central Duality Core with Morphing Animation -->
+                    <div class="duality-core">☯</div>
                 </div>
 
                 <!-- Enhanced Moon Phase Animation with Flares -->
@@ -1350,9 +1518,9 @@
         </section>
     </main>
 
-    <!-- Enhanced JavaScript with Dual Moon System -->
+    <!-- Enhanced JavaScript with New Dual Moon System -->
     <script>
-        // Enhanced Cosmic System with Dual Moon Support
+        // Enhanced Cosmic System with Figure-8 Dual Moon Support
         class AdvancedCosmicEnhancer {
             constructor() {
                 this.initParticlesJS();
@@ -1360,6 +1528,7 @@
                 this.initEnhancedShootingStars();
                 this.initMouseTracking();
                 this.initDualMoonPhaseSystem();
+                this.initMoonTrailSystem();
                 this.initScrollEffects();
                 this.initAnimeJSAnimations();
                 this.initThreeJSBackground();
@@ -1611,6 +1780,41 @@
                 setInterval(cycleMoonPhases, 8000);
             }
 
+            // NEW: Moon Trail System for Figure-8 Orbits
+            initMoonTrailSystem() {
+                const dualMoonSystem = document.querySelector('.dual-moon-system');
+                if (!dualMoonSystem) return;
+
+                const createTrail = (moon, trailClass) => {
+                    const trail = document.createElement('div');
+                    trail.className = `moon-trail ${trailClass}`;
+                    
+                    const moonRect = moon.getBoundingClientRect();
+                    const systemRect = dualMoonSystem.getBoundingClientRect();
+                    
+                    trail.style.left = (moonRect.left - systemRect.left + moonRect.width / 2) + 'px';
+                    trail.style.top = (moonRect.top - systemRect.top + moonRect.height / 2) + 'px';
+                    
+                    dualMoonSystem.appendChild(trail);
+                    
+                    // Remove trail after animation
+                    setTimeout(() => {
+                        if (trail.parentNode) {
+                            trail.remove();
+                        }
+                    }, 2000);
+                };
+
+                // Create trails periodically
+                setInterval(() => {
+                    const whiteMoon = document.querySelector('.white-moon');
+                    const blackMoon = document.querySelector('.black-moon');
+                    
+                    if (whiteMoon) createTrail(whiteMoon, 'white-trail');
+                    if (blackMoon) createTrail(blackMoon, 'black-trail');
+                }, 200);
+            }
+
             // Enhanced Scroll Effects
             initScrollEffects() {
                 let ticking = false;
@@ -1653,23 +1857,34 @@
                     easing: 'easeOutElastic(1, .8)'
                 });
 
-                // Floating animation for dual moon system
+                // Enhanced floating animation for dual moon system
                 anime({
                     targets: '.dual-moon-system',
-                    translateY: [-8, 8],
-                    duration: 6000,
+                    translateY: [-12, 12],
+                    duration: 8000,
                     direction: 'alternate',
                     loop: true,
                     easing: 'easeInOutSine'
                 });
 
-                // Duality symbol rotation
+                // Duality core morphing animation
                 anime({
-                    targets: '.duality-symbol',
-                    rotate: [0, 360],
-                    duration: 30000,
+                    targets: '.duality-core',
+                    scale: [1, 1.1, 1],
+                    duration: 6000,
                     loop: true,
-                    easing: 'linear'
+                    easing: 'easeInOutQuad'
+                });
+
+                // Orbital rings breathing effect
+                anime({
+                    targets: '.orbital-ring',
+                    scale: [1, 1.05, 1],
+                    opacity: [0.3, 0.7, 0.3],
+                    duration: 4000,
+                    delay: anime.stagger(1000),
+                    loop: true,
+                    easing: 'easeInOutSine'
                 });
 
                 // Cosmic button hover effects
@@ -1701,9 +1916,10 @@
                 console.log('Three.js available for advanced 3D dual moon effects');
                 
                 // Future implementation could include:
-                // - 3D dual moon system
+                // - 3D dual moon system with realistic physics
                 // - Interactive orbital mechanics
                 // - Gravitational effects visualization
+                // - Figure-8 orbital patterns in 3D space
             }
 
             // Audio Reactive Elements
@@ -1714,12 +1930,12 @@
                     // Future implementation:
                     // - Audio-reactive moon phases
                     // - Sound-synchronized orbital speeds
-                    // - Harmonic resonance effects
+                    // - Harmonic resonance effects for Figure-8 patterns
                 }
             }
         }
 
-        // Enhanced GSAP Animations for Dual Moon System
+        // Enhanced GSAP Animations for Figure-8 Dual Moon System
         class AdvancedGSAPAnimations {
             constructor() {
                 if (typeof gsap !== 'undefined') {
@@ -1757,7 +1973,7 @@
                         opacity: 0, 
                         scale: 0.3, 
                         rotation: 180,
-                        duration: 2,
+                        duration: 2.5,
                         ease: 'back.out(1.7)' 
                     }, '-=1')
                     .from('.tagline', { 
@@ -1794,17 +2010,10 @@
                     );
                 });
 
-                // Continuous dual moon orbit animations
-                gsap.to('.white-moon', {
+                // Enhanced cosmic energy field animation
+                gsap.to('.cosmic-energy-field', {
                     rotation: 360,
-                    duration: 25,
-                    ease: 'none',
-                    repeat: -1
-                });
-
-                gsap.to('.black-moon', {
-                    rotation: -360,
-                    duration: 20,
+                    duration: 30,
                     ease: 'none',
                     repeat: -1
                 });
@@ -1817,14 +2026,15 @@
                     repeat: -1
                 });
 
-                // Floating elements
+                // Floating elements with enhanced physics
                 gsap.to('.tagline-icon', {
-                    y: -10,
-                    duration: 2,
+                    y: -15,
+                    rotation: 15,
+                    duration: 3,
                     ease: 'power2.inOut',
                     repeat: -1,
                     yoyo: true,
-                    stagger: 0.5
+                    stagger: 0.8
                 });
 
                 // Interactive hover animations
@@ -1832,8 +2042,9 @@
                     role.addEventListener('mouseenter', () => {
                         gsap.to(role, {
                             scale: 1.1,
-                            y: -5,
-                            duration: 0.3,
+                            y: -8,
+                            rotation: 2,
+                            duration: 0.4,
                             ease: 'power2.out'
                         });
                     });
@@ -1842,7 +2053,8 @@
                         gsap.to(role, {
                             scale: 1,
                             y: 0,
-                            duration: 0.3,
+                            rotation: 0,
+                            duration: 0.4,
                             ease: 'power2.out'
                         });
                     });
@@ -1872,7 +2084,7 @@
                 window.addEventListener('load', () => {
                     setTimeout(() => {
                         const perfData = performance.getEntriesByType('navigation')[0];
-                        console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                        console.log('🌙 Cosmic page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
                     }, 0);
                 });
             }
@@ -1880,7 +2092,7 @@
 
         // Error handling and graceful degradation
         window.addEventListener('error', (e) => {
-            console.warn('Animation error handled gracefully:', e.message);
+            console.warn('🌙 Cosmic animation error handled gracefully:', e.message);
         });
 
         // Resize handler for responsive animations
